@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangzhazha.github.io/"/>
-  <updated>2019-02-26T14:38:39.184Z</updated>
+  <updated>2019-02-26T14:43:55.880Z</updated>
   <id>http://huangzhazha.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>使用 Nginx 和 Gunicorn 部署 Django 博客</title>
     <link href="http://huangzhazha.github.io/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/"/>
     <id>http://huangzhazha.github.io/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/</id>
     <published>2019-02-26T14:39:45.838Z</published>
-    <updated>2019-02-26T14:38:39.184Z</updated>
+    <updated>2019-02-26T14:43:55.880Z</updated>
     
     <summary type="html">
     
@@ -34,6 +34,8 @@
       
     
     </summary>
+    
+      <category term="Django" scheme="http://huangzhazha.github.io/categories/Django/"/>
     
     
   </entry>
