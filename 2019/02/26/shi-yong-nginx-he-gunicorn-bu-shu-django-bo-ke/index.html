@@ -1,0 +1,877 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Super&amp;Huang">
+    <meta name="description" content="针对很多朋友反映按照教程的做法始终只能看到 Nginx 欢迎页面的问题，Tian Pengfei sanyuwen 给出了很好的建议。如果你也被类似问题困扰，不妨尝试一下这个建议。
+
+这个问题也困扰了很久，最终发现是sites-enable">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Super&amp;Huang</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Super&Huang</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Super&Huang</div>
+        <div class="logo-desc">
+            
+            为人善，福虽未至，祸已远离。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huangzhazha" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huangzhazha" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-02-26
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        4.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        17 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>针对很多朋友反映按照教程的做法始终只能看到 Nginx 欢迎页面的问题，Tian Pengfei sanyuwen 给出了很好的建议。如果你也被类似问题困扰，不妨尝试一下这个建议。</p>
+<blockquote>
+<p>这个问题也困扰了很久，最终发现是sites-enabled文件夹里默认的default文件中的配置覆盖了自己写的配置，导致配置不生效，把default文件删掉就可以正常被nginx代理过去了，亲测有效</p>
+</blockquote>
+<p>我们博客的基础功能已经开发的基本差不多了，虽然还有很多地方可以完善，但我们还是希望早点把博客部署到服务器上，让他人可以通过外网访问。至于有待完善的地方，可以等部署完后一点点地迭代和改进。现在就让我们来把博客部署到服务器上吧！</p>
+<p><strong>注意：本文的每一个步骤都在真实环境下验证无误。除非你知道自己在做什么，否则我们建议每一步均严格按照教程的指导来，这样能保证你顺利完成部署。</strong></p>
+<h1 id="部署前准备"><a href="#部署前准备" class="headerlink" title="部署前准备"></a><strong>部署前准备</strong></h1><p>我们将使用比较流行的 Nginx + Gunicorn 的方式将 Django 开发的博客部署到自己的服务器，让别人能够通过域名访问你的博客。至于 Nginx、Gunicorn 是什么暂时放到一边，读完本教程后你就会知道它们的作用和使用方法了。</p>
+<p>为了部署我们的博客，需要满足以下两个条件：</p>
+<ol>
+<li>有一台可以通过外网访问的服务器。</li>
+<li>有一个域名。<br>如果你已经满足以上条件，可以直接跳到后面的搭建服务器部分。这里简单介绍一下我目前所知的以最低成本满足以上两个条件的方式。</li>
+</ol>
+<h2 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a><strong>购买服务器</strong></h2><p>如果你是学生，推荐购买阿里云服务器，学生优惠价是 9.9 元/月，而且服务器性能比较高。购买地址：阿里云服务器学生专区。具体的购买步骤这里就不赘述了，根据网站的指引相信你肯定能够购买成功。只是注意一点的是在选服务器类型的时候选择公共镜像，这样系统比较纯净。操作系统建议选 ubuntu 14.04 64位，这是本教程使用的服务器环境。</p>
+<p>如果你不是学生，推荐购买搬瓦工 vps。目前最便宜的是 19.9美元/年，缺点是服务器性能没有阿里云高，但优点是顺带可以用它来搭梯子，从此访问 google、youtube 不是梦（基于 shadowsocks 只需简单几步就可以搭建起自己的梯子服务器）。同样购买的过程就不赘述了，搬瓦工 vps 中文网 有超级详细的指引。只是注意安装操作系统时建议选 ubuntu 14.04 64位，这是本教程使用的服务器环境。</p>
+<p>如果你不差那点钱，随意选择一个云服务器提供商购买一个云服务器即可。</p>
+<h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a><strong>购买域名</strong></h2><p>域名服务商很多，我这里使用的是 阿里云域名注册系统。域名是网站的门牌，如果打算长期运营这个网站建议多考虑考虑，选一个适当的域名。如果只是为了测试，随便注册一个域名即可，一些非常见后缀的域名非常便宜，一般 10元/年就能搞定。但注意一点根据工信部规定，以下后缀的域名需要实名认证后才能使用：</p>
+<p>.cn/.com/.net/.top/.xyz/.vip/.club/.ren/.wang/.shop/.xin/.中国/.信息/.公司/.网络/.广东/.佛山</p>
+<p>如果你购买的是上述后缀的域名，意味着需要提交个人的身份资料实名认证后才能正常使用，这通常需要花费几天的时间。所以如果只为了测试和学习部署的话，最好避开上述后缀的域名。</p>
+<h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a><strong>搭建服务器</strong></h2><p>本教程使用的本地环境为 Windows 10，服务器环境为 ubuntu 14.04（64 位）。如果你的环境和我的有所差异导致一些命令无法执行，将这些命令转换为你所在环境的命令执行即可。</p>
+<p><strong>远程登录到服务器</strong></p>
+<p>服务器通常位于云端，需要使用远程登录工具登录后才能对服务器进行操作。我使用的是 Xshell，Windows 下百度 Xshell 下载安装即可，软件对学校和个人用户是免费的。</p>
+<p>如何远程登录到服务器这里就不赘述了，相信你参考网上的一些教程肯定能够顺利登录。假如你和我一样使用 Xshell 的话，这里有一篇很详细的教程可以参考：教你怎么使用xshell远程连接linux服务器。</p>
+<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a><strong>安装软件</strong></h2><p>顺利连接到远程服务器了。如果是一台全新服务器的话，通常我们是以 root 用户登录的。在 root 下部署代码不安全，最好是建一个新用户（如果你已经以非 root 用户登录的话可以跳过这一步）。下面的一些列命令将创建一个拥有超级权限的新用户：</p>
+<pre><code># 在 root 用户下运行这条命令创建一个新用户，yangxg 是用户名
+# 因为我叫杨学光，所以我取的用户名是 yangxg
+# 选择一个你喜欢的用户名，不一定非得和我的相同
+root@localhost:~# useradd -m -s /bin/bash yangxg
+
+# 把新创建的用户加入超级权限组
+root@localhost:~# usermod -a -G sudo yangxg
+
+# 为新用户设置密码
+# 注意在输密码的时候不会有字符显示，不要以为键盘坏了，正常输入即可
+root@localhost:~# passwd yangxg
+
+# 切换到创建的新用户
+root@localhost:~# su - yangxg
+
+# 切换成功，@符号前面已经是新用户名而不是 root 了
+yangxg@localhost:~$
+</code></pre><p>新用户创建并切换成功了。如果是新服务器的话，最好先更新一下系统，避免因为版本太旧而给后面安装软件带来麻烦。运行下面的两条命令：</p>
+<pre><code>yangxg@localhost:~$ sudo apt-get update
+yangxg@localhost:~$ sudo apt-get upgrade
+</code></pre><p>接下来就可以安装必要的软件了，这里我们需要用到的软件有 Nginx、Pytohn3、Git、pip 和 virtualenv。</p>
+<pre><code>yangxg@localhost:~$ sudo apt-get install nginx
+yangxg@localhost:~$ sudo apt-get install git python3 python3-pip
+yangxg@localhost:~$ sudo pip3 install virtualenv
+</code></pre><h2 id="解析域名到服务器的-IP-地址"><a href="#解析域名到服务器的-IP-地址" class="headerlink" title="解析域名到服务器的 IP 地址"></a><strong>解析域名到服务器的 IP 地址</strong></h2><p>将域名和服务器的 IP 地址绑定后，用户就可以通过在浏览器输入域名来访问服务器了。</p>
+<p>各大域名服务商都提供了域名解析服务，但其配置界面各有差异，请依据其指引完成域名解析。下面是我使用的阿里云域名解析页面。</p>
+<p><img src="https://i.imgur.com/LNioqy0.png" alt=""></p>
+<h2 id="启动-Nginx-服务"><a href="#启动-Nginx-服务" class="headerlink" title="启动 Nginx 服务"></a><strong>启动 Nginx 服务</strong></h2><p>Nginx 是用来处理静态文件请求的。比如当我们访问一个博客文章详情页面时，服务器会接收到下面两种请求：</p>
+<ul>
+<li>显示文章的详情信息，这些信息通常保存在数据库里，因此需要调用数据库获取数据。</li>
+<li>图片、css、js 等存在服务器某个文件夹下的静态文件。</li>
+</ul>
+<p>对于前一种请求，博客文章的数据需要借助 Django 从数据库中获取，Nginx 处理不了，它就会把这个请求转发给 Django，让 Django 去处理。而对于后一种静态文件的请求，只需要去这些静态文件所在的文件夹获取，Nginx 就会代为处理，不再麻烦 Django。</p>
+<p>用 Django 去获取静态文件是很耗时的，但 Nginx 可以很高效地处理，这就是我们要使用 Nginx 的原因（当然其功能远不止这些）。</p>
+<p>通过前面的步骤我们已经安装了 Nginx，并且已经把域名和服务器 IP 绑定了。运行下面的命令启动 Nginx 服务：</p>
+<pre><code>yangxg@localhost:~$ sudo service nginx start
+</code></pre><p>在浏览器输入域名，看到如下页面说明 Nginx 启动成功了。</p>
+<p><img src="https://i.imgur.com/fFjzjkp.png" alt=""></p>
+<h1 id="部署代码"><a href="#部署代码" class="headerlink" title="部署代码"></a><strong>部署代码</strong></h1><h2 id="部署前的项目配置"><a href="#部署前的项目配置" class="headerlink" title="部署前的项目配置"></a><strong>部署前的项目配置</strong></h2><p>Django 项目中会有一些 CSS、JavaScript 等静态文件，为了能够方便地让 Nginx 处理这些静态文件的请求，我们把项目中的全部静态文件收集到一个统一的目录下，这个目录通常位于 Django 项目的根目录，并且命名为 static。为了完成这些任务，需要在项目的配置文件里做一些必要的配置：</p>
+<pre><code>blogproject/settings.py
+
+# 其他配置...
+
+STATIC_URL = &#39;/static/&#39;
+# 加入下面的配置
+STATIC_ROOT = os.path.join(BASE_DIR, &#39;static&#39;)
+</code></pre><p>STATIC_ROOT 指明了静态文件的收集目录，即项目根目录（BASE_DIR）下的 static 文件夹。</p>
+<p>为了安全起见，在生产环境下需要关闭 DEBUG 选项以及设置允许访问的域名。打开 settings.py 文件，找到 DEBUG 和 ALLOWED_HOSTS 这两个选项，将它们设置成如下的值：</p>
+<pre><code>blogproject/settings.py
+
+DEBUG = False
+ALLOWED_HOSTS = [&#39;127.0.0.1&#39;, &#39;localhost &#39;, &#39;.zmrenwu.com&#39;]
+</code></pre><p>ALLOWED_HOSTS 是允许访问的域名列表，127.0.0.1 和 localhost 是本地访问的域名，.zmrenwu.com 是访问服务器的域名（换成你自己的域名）。域名前加一个点表示允许访问该域名下的子域名，比如 <a href="http://www.zmrenwu.com、test.zmrenwu.com" target="_blank" rel="noopener">www.zmrenwu.com、test.zmrenwu.com</a> 等二级域名同样允许访问。如果不加前面的点则只允许访问 zmrenwu.com。</p>
+<p>项目还会依赖一些第三方 Python 库，为了方便在服务器上一次性安装，我们将全部依赖写入一个叫 requirements.txt 的文本文件中。激活本地的虚拟环境（如果你使用了虚拟环境的话），并进入项目的根目录，运行 pip freeze &gt; requirements.txt 命令：</p>
+<pre><code>(blogproject_env) C:\Users\yangxg\Workspace\blogproject&gt;
+pip freeze &gt; requirements.txt
+</code></pre><p>这时项目根目录下会生成了一个 requirements.txt 的文本文件，其内容记录了项目的全部依赖。</p>
+<h2 id="将代码上传到-GitHub"><a href="#将代码上传到-GitHub" class="headerlink" title="将代码上传到 GitHub"></a><strong>将代码上传到 GitHub</strong></h2><p>将代码上传到 GitHub 等代码托管平台，这样我们就可以方便地把代码拉取到服务器了。Git 和 GitHub 的使用相信你已经很熟悉了，这里就不赘述过程。如果不知道如何使用地话可以自行百度相关教程。</p>
+<p>注意数据库文件不要上传！</p>
+<h2 id="设置服务器目录结构"><a href="#设置服务器目录结构" class="headerlink" title="设置服务器目录结构"></a><strong>设置服务器目录结构</strong></h2><p>接下来需要把代码上传到服务器了。我服务器上存放代码的目录结构一般是这样的：</p>
+<pre><code>/home/yangxg/
+    sites/
+       demo.zmrenwu.com/
+           env/
+           django-blog-tutorial/
+</code></pre><p>一台服务器可能部署多个网站，所有网站代码都放在 sites/ 目录下。demo.zmrenwu.com/ 这个文件夹以网站的域名命名，便于区分。env/ 是 python 虚拟环境目录。django-blog-tutorial/ 是 Django 博客项目目录。</p>
+<p>因此先来创建这个目录结构，注意目录名替换为你自己的域名，以后涉及到 demo.zmrenwu.com 的地方通常都要替换你自己的域名，后面就不再一一指出了，运行下面的命令，</p>
+<pre><code>yangxg@localhost:~$ mkdir -p ~/sites/demo.zmrenwu.com
+</code></pre><p>这里 ~ 代表当前用户的 home 目录，即 /home/yangxg/。</p>
+<p>接下来创建虚拟环境，先进入到 demo.zmrenwu.com 目录下，然后运行 virtualenv 命令创建虚拟环境：</p>
+<pre><code>yangxg@localhost:~$ cd ~/sites/demo.zmrenwu.com
+yangxg@localhost:~/sites/demo.zmrenwu.com$ virtualenv --python=python3 env
+</code></pre><p>注意这里使用 –python=python3 来指定克隆 Python3 的环境。因为 ubuntu 系统默认安装了 Python2，如果不特别指定的话 Virtualenv 默认克隆的是 Python2 的环境。</p>
+<p>检查一下虚拟环境是否创建成功，运行 ls 命令列出当前目录下的文件和文件夹，看到 env 这个文件夹说明虚拟环境创建成功。</p>
+<pre><code>yangxg@localhost:~/sites/demo.zmrenwu.com$ ls
+env
+</code></pre><p>接着再从代码仓库把项目代码拉取过来，把 git clone 后的地址换成你自己的 GitHub 仓库地址！</p>
+<pre><code>yangxg@localhost:~/sites/demo.zmrenwu.com$ git clone https://github.com/zmrenwu/django-blog-tutorial.git
+</code></pre><p>运行 ls 命令检查一下是否拉取成功：</p>
+<pre><code>yangxg@localhost:~/sites/demo.zmrenwu.com$ ls
+django-blog-tutorial  env
+</code></pre><p>多了 django-blog-tutorial 文件夹（文件夹名称由你的 GitHub 仓库名决定），说明拉取成功了。</p>
+<h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a><strong>安装项目依赖</strong></h2><p>激活虚拟环境，再进入到项目根目录，即 requirements.txt 所在的目录，安装项目的全部依赖：</p>
+<pre><code>yangxg@localhost:~/sites/demo.zmrenwu.com$ source env/bin/activate
+(env) yangxg@localhost:~/sites/demo.zmrenwu.com$ cd django-blog-tutorial/
+(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ pip install -r requirements.txt
+</code></pre><h2 id="收集静态文件"><a href="#收集静态文件" class="headerlink" title="收集静态文件"></a><strong>收集静态文件</strong></h2><p>虚拟环境下继续运行 python manage.py collectstatic 命令收集静态文件到 static 目录下：</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ python manage.py collectstatic
+</code></pre><h2 id="生成数据库"><a href="#生成数据库" class="headerlink" title="生成数据库"></a><strong>生成数据库</strong></h2><p>虚拟环境下继续运行 python manage.py migrate 命令创建数据库文件：</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ python manage.py migrate
+</code></pre><h2 id="创建超级用户"><a href="#创建超级用户" class="headerlink" title="创建超级用户"></a><strong>创建超级用户</strong></h2><p>虚拟环境下继续运行 python manage.py createsuperuser 命令创建一个超级用户，方便我们进入 Django 管理后台。这和本地开发时是一样的，具体请参照：在 Django Admin 后台文章。</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ python manage.py createsuperuser
+</code></pre><h2 id="配置-Nginx"><a href="#配置-Nginx" class="headerlink" title="配置 Nginx"></a><strong>配置 Nginx</strong></h2><p>接下是配置 Nginx 来处理用户请求。</p>
+<p>先在服务器的 /etc/nginx/sites-available/ 目录下新建一个配置文件，文件名我一般就设置为域名。写上下面的配置内容：</p>
+<pre><code>/etc/nginx/sites-available/demo.zmrenwu.com
+
+server {
+    charset utf-8;
+    listen 80;
+    server_name demo.zmrenwu.com; ①
+
+    location /static { ②
+        alias /home/yangxg/sites/demo.zmrenwu.com/django-blog-tutorial/static; 
+    }
+
+    location / { ③
+        proxy_set_header Host $host;
+        proxy_pass http://unix:/tmp/demo.zmrenwu.com.socket;
+    }
+}
+</code></pre><p>① 服务的域名为 demo.zmrenwu.com。</p>
+<p>② 所有URL 带有 /static 的请求均由 Nginx 处理，alias 指明了静态文件的存放目录。</p>
+<p>③ 其它请求转发给 Django 处理。proxy_pass 后面使用了 unix 套接字，其作用是防止端口冲突，这里就不再详述。</p>
+<p>至于怎么在服务器新建文件和写文件，请自行学习一点点 vi 编辑器的用法，这里也不一一讲解了。</p>
+<p>我们在 /etc/nginx/sites-available/ 放置了配置文件，接下来需要创建一个符号链接，把这个配置文件加入到启用的网站列表中去，被启用网站的目录在 /etc/nginx/sites-enabled/，你可以理解为从 sites-available/ 目录下发送了一个配置文件的快捷方式到 sites-enabled/ 目录。具体命令如下：</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ sudo ln -s /etc/nginx/sites-available/demo.zmrenwu.com /etc/nginx/sites-enabled/demo.zmrenwu.com
+</code></pre><h2 id="使用-Gunicorn"><a href="#使用-Gunicorn" class="headerlink" title="使用 Gunicorn"></a><strong>使用 Gunicorn</strong></h2><p>Gunicorn 一般用来管理多个进程，有进程挂了Gunicorn 可以把它拉起来，防止服务器长时间停止服务，还可以动态调整 worker 的数量，请求多的时候增加 worker 的数量，请求少的时候减少。</p>
+<p>在虚拟环境下，安装 Gunicorn：</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ pip install gunicorn
+</code></pre><p>用 Gunicorn 启动服务器进程：</p>
+<pre><code>(env) yangxg@localhost:~/sites/demo.zmrenwu.com/django-blog-tutorial$ gunicorn --bind unix:/tmp/demo.zmrenwu.com.socket blogproject.wsgi:application
+</code></pre><p>浏览器输入域名，可以看到访问成功了！</p>
+<h2 id="自动启动-Gunicorn"><a href="#自动启动-Gunicorn" class="headerlink" title="自动启动 Gunicorn"></a><strong>自动启动 Gunicorn</strong></h2><p>现在 Gunicorn 是我们手工启动的，万一哪天服务器崩溃重启了又得重新手工启动。为此我们写一个自动启动脚本，这样当服务器重新启动后，脚本会帮我们重启 Gunicorn。先按 Ctrl + c 停止刚才启动的服务器进程。</p>
+<p>写一个启动脚本，这样当服务器重启后能自动引导 Gunicorn 的启动。脚本位于 /etc/init/ 目录下，且脚本文件名必须以 .conf 结尾：</p>
+<pre><code>/etc/init/gunicorn-demo.zmrenwu.com.conf
+
+start on net-device-up ①
+stop on shutdown
+
+respawn ②
+
+setuid yangxg ③
+chdir /home/yangxg/sites/demo.zmrenwu.com/django-blog-tutorial ④
+
+exec ../env/bin/gunicorn --bind unix:/tmp/demo.zmrenwu.com.socket blogproject.wsgi:application ⑤
+</code></pre><p>① start on net-device-up 确保只在服务器联网时才启动 Gunicorn。</p>
+<p>② 如果进程崩溃了（比如服务器重启或者进程因为某些以外情况被 kill），respawn 将自动重启 Gunicorn。</p>
+<p>③ setuid 确保以 yangxg 用户的身份（换成你自己的用户名）运行 Gunicorn 进程。</p>
+<p>④ chdir 进入到指定目录，这里进入项目的根目录。</p>
+<p>⑤ exec 执行进程，即开启服务器进程。</p>
+<p>现在可以用 start 命令启动 Gunicorn 了：</p>
+<pre><code>sudo start gunicorn-demo.zmrenwu.com
+</code></pre><p>以后如果更新了代码，只要运行下面的命令重启一下 Nginx 和 Gunicorn 就可以使新的代码生效了：</p>
+<pre><code>sudo service nginx reload
+sudo restart gunicorn-demo.zmrenwu.com
+</code></pre><h2 id="使用-CDN-加快-Bootstrap-和-jQuery-的加载速度"><a href="#使用-CDN-加快-Bootstrap-和-jQuery-的加载速度" class="headerlink" title="使用 CDN 加快 Bootstrap 和 jQuery 的加载速度"></a><strong>使用 CDN 加快 Bootstrap 和 jQuery 的加载速度</strong></h2><p>我们的项目使用了 Bootstrap 和 jQuery，这两个文件我们是从本地加载的。如果服务器性能比较差的话，加载需要耗费很长的时间，网站打开的速度就变得无法忍受。我们使用 CDN 来加快加载速度。具体来说，替换 base.html 的几个静态文件的加载标签：</p>
+<pre><code>base.html
+
+- &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'blog/css/bootstrap.min.css' %}&quot;&gt;
+- &lt;script src=&quot;{% static 'blog/js/jquery-2.1.3.min.js' %}&quot;&gt;&lt;/script&gt;
+- &lt;script src=&quot;{% static 'blog/js/bootstrap.min.js' %}&quot;&gt;&lt;/script&gt;
++ &lt;link href=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
++ &lt;script src=&quot;https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js&quot;&gt;&lt;/script&gt;
++ &lt;script src=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>这样网站访问的速度将大大提升！</p>
+<h2 id="部署过程自动化"><a href="#部署过程自动化" class="headerlink" title="部署过程自动化"></a><strong>部署过程自动化</strong></h2><p>在整个部署过程中我们运行了十几条命令，手动输入了 N 个字符。如果每次更新代码都要远程连接到服务器执行这些命令的话将变得非常麻烦。接下来的教程我们将介绍使用 Fabric 自动化整个部署过程。写好部署脚本后，只需要执行一条命令，就可以非常方便地自动完成整个部署。</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/" class="b-link-green"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">针对很多朋友反映按照教程的做法始终只能看到 Nginx 欢迎页面的问题，Tian Pengfei sanyuwen 给出了很好的建议。如果你也被类似问题困扰，不妨尝试一下这个建议。
+
+这个问题也困扰了很久，最终发现是sites-enable</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Super Huang
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/18/hu-lian-wang-xie-yi-ru-men-er/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="互联网协议入门（二）">
+                        
+                        <span class="card-title">互联网协议入门（二）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">上一篇文章分析了互联网的总体构思，从下至上，每一层协议的设计思想。
+这是从设计者的角度看问题，今天我想切换到用户的角度，看看用户是如何从上至下，与这些协议互动的。
+======================================</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
+                                    理解计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://huangzhazha.github.io/" target="_blank">Super Huang</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">11.7k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

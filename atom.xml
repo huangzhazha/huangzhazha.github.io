@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangzhazha.github.io/"/>
-  <updated>2019-02-19T13:01:27.010Z</updated>
+  <updated>2019-02-26T14:38:39.184Z</updated>
   <id>http://huangzhazha.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://huangzhazha.github.io/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/"/>
+    <id>http://huangzhazha.github.io/2019/02/26/shi-yong-nginx-he-gunicorn-bu-shu-django-bo-ke/</id>
+    <published>2019-02-26T14:39:45.838Z</published>
+    <updated>2019-02-26T14:38:39.184Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;针对很多朋友反映按照教程的做法始终只能看到 Nginx 欢迎页面的问题，Tian Pengfei sanyuwen
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>互联网协议入门（二）</title>
