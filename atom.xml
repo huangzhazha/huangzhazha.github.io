@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangzhazha.github.io/"/>
-  <updated>2019-02-26T14:43:55.880Z</updated>
+  <updated>2019-08-09T04:57:21.401Z</updated>
   <id>http://huangzhazha.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-00-why-python/"/>
+    <id>http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-00-why-python/</id>
+    <published>2019-05-04T11:20:28.000Z</published>
+    <updated>2019-08-09T04:57:21.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂00&quot;&gt;&lt;a href=&quot;#python小课堂00&quot; class=&quot;headerlink&quot; title=&quot;python小课堂00&quot;&gt;&lt;/a&gt;python小课堂00&lt;/h2&gt;&lt;h3 id=&quot;01-THE-FIRST-编程、编程语言&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-01-huan-jing-an-zhuang/"/>
+    <id>http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-01-huan-jing-an-zhuang/</id>
+    <published>2019-05-04T11:20:28.000Z</published>
+    <updated>2019-08-09T04:57:21.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂01-环境安装&quot;&gt;&lt;a href=&quot;#python小课堂01-环境安装&quot; class=&quot;headerlink&quot; title=&quot;python小课堂01 - 环境安装&quot;&gt;&lt;/a&gt;python小课堂01 - 环境安装&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用 Nginx 和 Gunicorn 部署 Django 博客</title>
