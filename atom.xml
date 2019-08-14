@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangzhazha.github.io/"/>
-  <updated>2019-08-09T04:57:21.401Z</updated>
+  <updated>2019-08-14T13:22:36.978Z</updated>
   <id>http://huangzhazha.github.io/</id>
   
   <author>
@@ -17,11 +17,395 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-00-why-python/"/>
-    <id>http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-00-why-python/</id>
-    <published>2019-05-04T11:20:28.000Z</published>
-    <updated>2019-08-09T04:57:21.401Z</updated>
+    <title>python小课堂16 - 函数篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-16-han-shu-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-16-han-shu-pian/</id>
+    <published>2019-08-14T13:03:28.429Z</published>
+    <updated>2019-08-14T13:22:36.978Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂16-函数篇&quot;&gt;&lt;a href=&quot;#python小课堂16-函数篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂16 - 函数篇&quot;&gt;&lt;/a&gt;python小课堂16 - 函数篇&lt;/h2&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂15 - 史上最详细的包和模块import讲解篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-15-shi-shang-zui-xiang-xi-de-bao-he-mo-kuai-import-jiang-jie-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-15-shi-shang-zui-xiang-xi-de-bao-he-mo-kuai-import-jiang-jie-pian/</id>
+    <published>2019-08-14T13:03:28.426Z</published>
+    <updated>2019-08-14T13:22:22.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂15-史上最详细的包和模块import讲解篇&quot;&gt;&lt;a href=&quot;#python小课堂15-史上最详细的包和模块import讲解篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂15 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂14 - 代码编辑器PyCharm篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-14-dai-ma-bian-ji-qi-pycharm-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-14-dai-ma-bian-ji-qi-pycharm-pian/</id>
+    <published>2019-08-14T13:03:28.423Z</published>
+    <updated>2019-08-14T13:22:11.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂14-代码编辑器PyCharm篇&quot;&gt;&lt;a href=&quot;#python小课堂14-代码编辑器PyCharm篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂14 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂13 - 流程控制语法篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-13-liu-cheng-kong-zhi-yu-fa-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-13-liu-cheng-kong-zhi-yu-fa-pian/</id>
+    <published>2019-08-14T13:03:28.421Z</published>
+    <updated>2019-08-14T13:21:59.562Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂13-流程控制语法篇&quot;&gt;&lt;a href=&quot;#python小课堂13-流程控制语法篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂13 - 流程控制语法篇&quot;&gt;&lt;/a&gt;python小课堂13 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂12 - 运算符篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-12-yun-suan-fu-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-12-yun-suan-fu-pian/</id>
+    <published>2019-08-14T13:03:28.416Z</published>
+    <updated>2019-08-14T13:21:46.307Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂12-运算符篇&quot;&gt;&lt;a href=&quot;#python小课堂12-运算符篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂12 - 运算符篇&quot;&gt;&lt;/a&gt;python小课堂12 - 运算符篇&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂11 - 变量篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-11-bian-liang-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-11-bian-liang-pian/</id>
+    <published>2019-08-14T13:03:28.412Z</published>
+    <updated>2019-08-14T13:21:29.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂11-变量篇&quot;&gt;&lt;a href=&quot;#python小课堂11-变量篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂11 - 变量篇&quot;&gt;&lt;/a&gt;python小课堂11 - 变量篇&lt;/h2&gt;&lt;h3 id=&quot;前言&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂10 - 基本数据类型终篇集合和字典</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-10-ji-ben-shu-ju-lei-xing-zhong-pian-ji-he-he-zi-dian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-10-ji-ben-shu-ju-lei-xing-zhong-pian-ji-he-he-zi-dian/</id>
+    <published>2019-08-14T13:03:28.408Z</published>
+    <updated>2019-08-14T13:21:15.610Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂10-基本数据类型终篇集合和字典&quot;&gt;&lt;a href=&quot;#python小课堂10-基本数据类型终篇集合和字典&quot; class=&quot;headerlink&quot; title=&quot;python小课堂10 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂09 - 基本数据类型序列总结篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-09-ji-ben-shu-ju-lei-xing-xu-lie-zong-jie-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-09-ji-ben-shu-ju-lei-xing-xu-lie-zong-jie-pian/</id>
+    <published>2019-08-14T13:03:28.405Z</published>
+    <updated>2019-08-14T13:20:56.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂09-基本数据类型序列总结篇&quot;&gt;&lt;a href=&quot;#python小课堂09-基本数据类型序列总结篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂09 - 基本数据类型序列总结篇&quot;&gt;&lt;/a&gt;python小课堂09 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂08 - 基本数据类型元组篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-08-ji-ben-shu-ju-lei-xing-yuan-zu-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-08-ji-ben-shu-ju-lei-xing-yuan-zu-pian/</id>
+    <published>2019-08-14T13:03:28.401Z</published>
+    <updated>2019-08-14T13:20:42.683Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂08-基本数据类型元组篇&quot;&gt;&lt;a href=&quot;#python小课堂08-基本数据类型元组篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂08 - 基本数据类型元组篇&quot;&gt;&lt;/a&gt;python小课堂08 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂07 - 基本数据类型列表篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-07-ji-ben-shu-ju-lei-xing-lie-biao-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-07-ji-ben-shu-ju-lei-xing-lie-biao-pian/</id>
+    <published>2019-08-14T13:03:28.398Z</published>
+    <updated>2019-08-14T13:20:27.346Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂07-基本数据类型列表篇&quot;&gt;&lt;a href=&quot;#python小课堂07-基本数据类型列表篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂07 - 基本数据类型列表篇&quot;&gt;&lt;/a&gt;python小课堂07 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂06 - 基本数据类型字符串运算篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-06-ji-ben-shu-ju-lei-xing-zi-fu-chuan-yun-suan-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-06-ji-ben-shu-ju-lei-xing-zi-fu-chuan-yun-suan-pian/</id>
+    <published>2019-08-14T13:03:28.395Z</published>
+    <updated>2019-08-14T13:20:12.362Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂06-基本数据类型字符串运算篇&quot;&gt;&lt;a href=&quot;#python小课堂06-基本数据类型字符串运算篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂06 - 基本数据类型字符串运算篇&quot;&gt;&lt;/a&gt;python小课堂06
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂05 - 基本数据类型字符串篇(重要)</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-05-ji-ben-shu-ju-lei-xing-zi-fu-chuan-pian-chong-yao/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-05-ji-ben-shu-ju-lei-xing-zi-fu-chuan-pian-chong-yao/</id>
+    <published>2019-08-14T13:03:28.391Z</published>
+    <updated>2019-08-14T13:19:54.499Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂05-基本数据类型字符串篇-重要&quot;&gt;&lt;a href=&quot;#python小课堂05-基本数据类型字符串篇-重要&quot; class=&quot;headerlink&quot; title=&quot;python小课堂05 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂04 - 基本数据类型布尔篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-04-ji-ben-shu-ju-lei-xing-bu-er-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-04-ji-ben-shu-ju-lei-xing-bu-er-pian/</id>
+    <published>2019-08-14T13:03:28.389Z</published>
+    <updated>2019-08-14T13:19:35.635Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂04-基本数据类型布尔篇&quot;&gt;&lt;a href=&quot;#python小课堂04-基本数据类型布尔篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂04 - 基本数据类型布尔篇&quot;&gt;&lt;/a&gt;python小课堂04 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂03 - 基本数据类型进制篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-03-ji-ben-shu-ju-lei-xing-jin-zhi-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-03-ji-ben-shu-ju-lei-xing-jin-zhi-pian/</id>
+    <published>2019-08-14T13:03:28.385Z</published>
+    <updated>2019-08-14T13:19:12.723Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂03-基本数据类型进制篇&quot;&gt;&lt;a href=&quot;#python小课堂03-基本数据类型进制篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂03 - 基本数据类型进制篇&quot;&gt;&lt;/a&gt;python小课堂03 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂02 - 基本数据类型数字篇</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-02-ji-ben-shu-ju-lei-xing-shu-zi-pian/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-02-ji-ben-shu-ju-lei-xing-shu-zi-pian/</id>
+    <published>2019-08-14T13:03:28.381Z</published>
+    <updated>2019-08-14T13:18:56.179Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂02-基本数据类型数字篇&quot;&gt;&lt;a href=&quot;#python小课堂02-基本数据类型数字篇&quot; class=&quot;headerlink&quot; title=&quot;python小课堂02 - 基本数据类型数字篇&quot;&gt;&lt;/a&gt;python小课堂02 -
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂01 - 环境安装</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-01-huan-jing-an-zhuang/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-01-huan-jing-an-zhuang/</id>
+    <published>2019-08-14T13:03:28.377Z</published>
+    <updated>2019-08-14T13:18:41.757Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;python小课堂01-环境安装&quot;&gt;&lt;a href=&quot;#python小课堂01-环境安装&quot; class=&quot;headerlink&quot; title=&quot;python小课堂01 - 环境安装&quot;&gt;&lt;/a&gt;python小课堂01 - 环境安装&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python小课堂00 - Why Python</title>
+    <link href="http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-00-why-python/"/>
+    <id>http://huangzhazha.github.io/2019/08/14/python-xiao-ke-tang-00-why-python/</id>
+    <published>2019-08-14T13:03:28.374Z</published>
+    <updated>2019-08-14T13:15:03.997Z</updated>
     
     <summary type="html">
     
@@ -35,27 +419,7 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-01-huan-jing-an-zhuang/"/>
-    <id>http://huangzhazha.github.io/2019/05/04/python-ru-men-xi-lie-01-huan-jing-an-zhuang/</id>
-    <published>2019-05-04T11:20:28.000Z</published>
-    <updated>2019-08-09T04:57:21.347Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;python小课堂01-环境安装&quot;&gt;&lt;a href=&quot;#python小课堂01-环境安装&quot; class=&quot;headerlink&quot; title=&quot;python小课堂01 - 环境安装&quot;&gt;&lt;/a&gt;python小课堂01 - 环境安装&lt;/h2&gt;&lt;h3
-        
-      
-    
-    </summary>
+      <category term="PythonA基础篇" scheme="http://huangzhazha.github.io/categories/PythonA%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     
     
   </entry>
@@ -128,28 +492,6 @@
     </summary>
     
       <category term="理解计算机" scheme="http://huangzhazha.github.io/categories/%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://huangzhazha.github.io/2019/02/13/hello-world/"/>
-    <id>http://huangzhazha.github.io/2019/02/13/hello-world/</id>
-    <published>2019-02-13T08:59:12.969Z</published>
-    <updated>2019-02-13T08:59:12.969Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
     
     
   </entry>

@@ -1,0 +1,840 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="python小课堂16 - 函数篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂16 - 函数篇前言函数篇 —— 说起函数，大家高中应该都学过类似的概念，函数指一个量随着另一个量的变化而变化，而在编程中，函数的概念则不尽相同。举个例子，比如打过dota的同学都知道，在dota中通过shift可以对英雄">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>python小课堂16 - 函数篇 | Super&amp;Huang</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Super&Huang</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Super&Huang</div>
+        <div class="logo-desc">
+            
+            为人善，福虽未至，祸已远离。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huangzhazha" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huangzhazha" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        python小课堂16 - 函数篇
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-14
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        6 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="python小课堂16-函数篇"><a href="#python小课堂16-函数篇" class="headerlink" title="python小课堂16 - 函数篇"></a>python小课堂16 - 函数篇</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>函数篇 —— 说起函数，大家高中应该都学过类似的概念，函数指一个量随着另一个量的变化而变化，而在编程中，函数的概念则不尽相同。举个例子，比如打过dota的同学都知道，在dota中通过shift可以对英雄进行预操作，也就是当英雄还没到某一地方时，我们可以通过shift键来设定好相应的路径以及施法，来完成对英雄的提前操作，这样起到的作用就是将操作模板化。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181213123925995.gif" alt="在这里插入图片描述"></p>
+<p>而相应的，在程序中，函数就是为了将代码进行模板化管理，它可以实现一些特定功能的小方法或是小程序。而在python小课堂之前的介绍中，其实就已经介绍过不少python自带的函数了，比如print()、max()、ord()等。。</p>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>通常在python中，我们可以类似下面的写法去定义一个函数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_hello</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello '</span> <span class="token operator">+</span> words<span class="token punctuation">)</span>
+
+print_hello<span class="token punctuation">(</span><span class="token string">'world!'</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> hello world!
+</code></pre>
+<p>def作为python中的关键标识字，全拼define 定义的意思，后面的print_hello作为函数的名称，小括号里面可以传入不同的参数，以便外面调用时将参数传入。想后面的print_hello(‘world!’)就是将’world!’ 传入到print_hello中。</p>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p><strong>1. 形参和实参</strong></p>
+<p>其中print_hello(words): words代表的是函数的形参，形式上的参数。</p>
+<p>其中print_hello(‘world!’)： ‘world!’代表的是函数的实参，即实际的参数。</p>
+<p><strong>2. 必须参数和关键字参数</strong></p>
+<p>想象一个实际场景，当我们在计算减法算数的时候，需要你手写一个函数，传入x,y并且将最终相加的结果打印出来。</p>
+<pre class=" language-python"><code class="language-python">
+<span class="token keyword">def</span> <span class="token function">sub</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    sub <span class="token operator">=</span> x <span class="token operator">-</span> y
+    <span class="token keyword">print</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span>
+sub<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span>
+</code></pre>
+<p>调用add函数时，传入的1,2称之为必须参数，也就是实参，传入时是有顺序的，所以我们最终结果得到的是1，但是如果我们把sub(2,1)改成了sub(1,2)最终得到的结果就是-1，有没有一种方法依然可以得到1呢？此时使用关键字参数即可实现。忽略实际参数传入时的顺序，写法如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sub</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    sub <span class="token operator">=</span> x <span class="token operator">-</span> y
+    <span class="token keyword">print</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span>
+sub<span class="token punctuation">(</span>y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span>
+</code></pre>
+<p>可以看到，在传入实参时，我们可以指定对应的函数形参值，进行传入对应的值，来达到无序传入。关键字参数在一些源码中是经常被用到的！</p>
+<p><strong>3. 默认参数</strong></p>
+<p>场景更新一下！比如现在需要我们求一个半径默认为1的圆形面积，半径可以通过外界因素进行改变，请设计出对应的函数。代码如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circle_area</span><span class="token punctuation">(</span>r <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    area <span class="token operator">=</span> <span class="token number">3.14</span> <span class="token operator">*</span> r
+    <span class="token keyword">print</span><span class="token punctuation">(</span>area<span class="token punctuation">)</span>
+circle_area<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">3.14</span>
+</code></pre>
+<p>默认参数就是在形参处写好一个默认值，若调用时没有传入值，则变量会取默认值。再来看下如果传入值会发生什么？</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circle_area</span><span class="token punctuation">(</span>r <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    area <span class="token operator">=</span> <span class="token number">3.14</span> <span class="token operator">*</span> r
+    <span class="token keyword">print</span><span class="token punctuation">(</span>area<span class="token punctuation">)</span>
+circle_area<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">31.400000000000002</span>
+</code></pre>
+<p>可以看到外面调用10时，将形参r=1覆盖掉了，最终算出来的结果以r=10为准。</p>
+<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>函数的返回值：通过return关键词来进行返回，当我们调用函数时，可以将函数的处理结果返回到调用处，来看一个加法的函数例子：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    sum <span class="token operator">=</span> x <span class="token operator">+</span> y
+    <span class="token keyword">return</span> sum
+
+result <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">4</span>
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2018121312421964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如果什么add函数不写return值呢？来看下结果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181213124228993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>上面的例子可以看到，python函数默认return值为None，而#代表的是注释，在代码中起到的作用是解释当前代码的意思，是写给人看的，并不执行。同样的#只能注释一行，要想注释多行可以使用 ‘’’ 你的代码 ‘’’，”””  你的代码 “””  ,也就是所谓的三双引号和三单引号。如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">'''
+def add(x, y):
+    sum = x + y
+    return sum
+'''</span>
+<span class="token triple-quoted-string string">"""
+result = add(1, 3)
+print(result)
+"""</span>
+</code></pre>
+<p>return关键词在函数中也代表这停止的意思，也就说在函数中如果遇到return，那么return后面的代码不会进行执行。如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181213124253919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="python的序列解包"><a href="#python的序列解包" class="headerlink" title="python的序列解包"></a>python的序列解包</h3><p>在python的函数中，返回值是可以有多个值的，比如现在有一个场景，让你去超市买水果，然后你花钱买到了苹果和香蕉。我用简单的函数代码来演示下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181213124308774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">buy</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> money <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">:</span>
+        fruit_a <span class="token operator">=</span> <span class="token string">'banana'</span>
+        fruit_b <span class="token operator">=</span> <span class="token string">'apple'</span>
+        <span class="token keyword">return</span> fruit_a<span class="token punctuation">,</span> fruit_b
+
+fruit <span class="token operator">=</span> buy<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>fruit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'通过元组索引得到的值：{fruit[0]}, {fruit[1]}'</span><span class="token punctuation">)</span>
+banana<span class="token punctuation">,</span> apple <span class="token operator">=</span> buy<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'通过解包得到的值:{banana}, {apple}'</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> 通过元组索引得到的值：banana<span class="token punctuation">,</span> apple
+<span class="token operator">>></span><span class="token operator">></span> 通过解包得到的值<span class="token punctuation">:</span>banana<span class="token punctuation">,</span>apple
+</code></pre>
+<p>可以看到，如果我们去超市买水果，身上带了大于10块钱的钱，那么我就可以同时买到苹果和香蕉，同时函数将两个值一起返回，得到的是元组，在调用时解析时，可以直接对元组进行解包操作，直接定义对应变量的名称即可！推荐用解包形式去得到函数多个返回值，因为逻辑非常清晰！</p>
+<h3 id="你不知道的python小知识点"><a href="#你不知道的python小知识点" class="headerlink" title="你不知道的python小知识点"></a>你不知道的python小知识点</h3><p><strong>1.python的系统递归参数</strong></p>
+<p>现在有一个场景，请你实现打印一句话hello！并且在函数内部调用自己本身。代码实现如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_hello</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span>
+  print_hello<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+print_hello<span class="token punctuation">(</span><span class="token string">'world!'</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181213124347471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到报错了！错误中文大概意思是递归错误，超过最大递归深度。最大深度就是屏幕上的993次。</p>
+<blockquote>
+<p>Tips：<br>递归 —&gt; 递归的意思就是函数本身自己调用自己。比如上面的例子中，在print_hello函数中又调用了自己，所以python就会一直执行下去，但是python自身有检测递归函数的机制，所以如果你写了一个死循环这样的递归，它会直接进行最大次数的尝试并且报错。常见的错误：在程序中若写了一个死循环递归方法，最终报错的信息则是：MemoryError: stack overflow，也就是常说的栈内存溢出。</p>
+</blockquote>
+<p>拓展知识：</p>
+<p>在上一节中，我曾经说过一个python自带的包，叫做sys。通过sys可以来设定递归函数的最大深度。请看下面的代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>setrecursionlimit<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">print_hello</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span>
+  print_hello<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+
+print_hello<span class="token punctuation">(</span><span class="token string">'world!'</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>2. python的链式赋值</strong><br>在python中，是支持链式赋值的，什么是链式呢？就是类似将元素串起来形成一个链子一样。如下：</p>
+<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> b <span class="token operator">=</span> c <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span>
+</code></pre>
+<p><strong>3. “序列解包”赋值</strong></p>
+<p>道理和上面讲过的序列解包差不多：</p>
+<pre class=" language-python"><code class="language-python">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span>
+</code></pre>
+<p>至此完！ </p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/08/14/python-xiao-ke-tang-16-han-shu-pian/" class="b-link-green">python小课堂16 - 函数篇</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/08/14/python-xiao-ke-tang-16-han-shu-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="python小课堂16 - 函数篇">
+                        
+                        <span class="card-title">python小课堂16 - 函数篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">python小课堂16 - 函数篇前言函数篇 —— 说起函数，大家高中应该都学过类似的概念，函数指一个量随着另一个量的变化而变化，而在编程中，函数的概念则不尽相同。举个例子，比如打过dota的同学都知道，在dota中通过shift可以对英雄</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/14/python-xiao-ke-tang-15-shi-shang-zui-xiang-xi-de-bao-he-mo-kuai-import-jiang-jie-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python小课堂15 - 史上最详细的包和模块import讲解篇">
+                        
+                        <span class="card-title">python小课堂15 - 史上最详细的包和模块import讲解篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">python小课堂15 - 史上最详细的包和模块import讲解篇前言在大量的代码设计中，我们不可能将所有代码都写在一个.py文件，所以有了包、模块，而为了代码可以重复利用(复用性)，就有了类、函数的概念。类和函数在下次介绍。
+python</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://huangzhazha.github.io/" target="_blank">Super Huang</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">28.5k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

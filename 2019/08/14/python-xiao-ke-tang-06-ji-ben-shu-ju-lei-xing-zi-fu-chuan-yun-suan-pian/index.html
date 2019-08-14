@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Super&amp;Huang">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="python小课堂06 - 基本数据类型字符串运算篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂06 - 基本数据类型字符串运算篇字符串的运算就题目而言，字符串的运算？乍一看！这是什么鬼？所谓的运算，数学定义的含义就是将数字之间进行各种算法，例如加减乘除。那么字符串运算呢？同理：就是将字符串进行所谓的“加减乘除！
+当">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Super&amp;Huang</title>
+    <title>python小课堂06 - 基本数据类型字符串运算篇 | Super&amp;Huang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +281,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        python小课堂06 - 基本数据类型字符串运算篇
                     </div>
                 </div>
             </div>
@@ -313,27 +314,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-13
+                    2019-08-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        765
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -349,19 +359,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="python小课堂06-基本数据类型字符串运算篇"><a href="#python小课堂06-基本数据类型字符串运算篇" class="headerlink" title="python小课堂06 - 基本数据类型字符串运算篇"></a>python小课堂06 - 基本数据类型字符串运算篇</h2><h3 id="字符串的运算"><a href="#字符串的运算" class="headerlink" title="字符串的运算"></a>字符串的运算</h3><p>就题目而言，字符串的运算？乍一看！这是什么鬼？所谓的运算，数学定义的含义就是将数字之间进行各种算法，例如加减乘除。那么字符串运算呢？同理：就是将字符串进行所谓的“加减乘除！</p>
+<p>当然如果在字符串中获取相关对应的字符，也算是对其运算的一种方式。</p>
+<p>例如:</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"Hello World!  I 'm coming!"</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>此字符串我想获取当中的’W’字符，如何获取呢？(具体操作看下面中的实践！)</p>
+<p>以上的这种行为操作都算是对字符串的运算，下面来看下具体实践吧！</p>
+<h3 id="动手实践字符串的运算"><a href="#动手实践字符串的运算" class="headerlink" title="动手实践字符串的运算"></a>动手实践字符串的运算</h3><p>打开idle，让我们实践一下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181108125400888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如上图实验所示，通过乘法可以实现对单一字符串的重叠复制，而通过加法可以将两个字符串进行拼接。</p>
+<p>如何获取字符串中某一字符呢？请看下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181108125413835.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到通过在字符串后面跟上中括号的而形式来对内容进行截取！上面的例子都是正数的下标，那么如果要是负数的下标是否可以呢？</p>
+<p><img src="https://img-blog.csdnimg.cn/20181108125429865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以通过负数来进行相应的倒数截取字符串！负下标的目的是什么呢？如果你字符串中内容很多，比如有1W个字符，那让你取倒数第二个，你不得一直数下去了。。！所以python创出了负数下标的表达方式。</p>
+<h3 id="字符串额外小知识"><a href="#字符串额外小知识" class="headerlink" title="字符串额外小知识"></a>字符串额外小知识</h3><p>说到字符串，回想下在上一章，我曾经说过的转义字符，那么实际上python有一个转义字符的小知识点！</p>
+<p>场景如下：</p>
+<p>现在让你用print()在idle中打印出 </p>
+<pre class=" language-python"><code class="language-python">'你好 ！
+我是你的老铁！
+'
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<p>想必你会知道这样去写:</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'你好！ \n 我是你的老铁！'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<p>如果此时，我就想让结果显示出<code>&#39;你好！ \n 我是你的老铁！&#39;</code>呢？</p>
+<p>在python中有着一个 r 或者 R 的写法，可以将原始转义字符不进行转义输出！r代表的含义是：raw，中文是未加工的的意思！也就是原始的意思。</p>
+<p>写法：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token string">'你好！ \n 我是你的老铁！'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>R<span class="token string">'你好！ \n 我是你的老铁！'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>我们通过idle试一下，将代码输入看下结果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181108125605962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到上面输出将原有的转义字符直接打印出来了！</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><code>字符串运算</code>在日常的编码中也是用到非常频繁的，尤其是+号来对字符串进行拼接！而相应的，切片对字符串的截取也是必要掌握的小技能，在处理数据时，会经常用到切片的概念！</p>
+<p>当你看到<code>r</code>加在’’字符串前面，则代表的是<code>原始字符串(raw str)</code>，其中包含的转义字符将失去转义自身的含义！</p>
 
             </div>
             <hr>
@@ -502,7 +535,7 @@
                     </span>
                     <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/13/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/14/python-xiao-ke-tang-06-ji-ben-shu-ju-lei-xing-zi-fu-chuan-yun-suan-pian/" class="b-link-green">python小课堂06 - 基本数据类型字符串运算篇</a>
                 </p>
             </div>
         </div>
@@ -527,29 +560,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/13/hu-lian-wang-xie-yi-ru-men-yi/">
+                <a href="/2019/08/14/python-xiao-ke-tang-07-ji-ben-shu-ju-lei-xing-lie-biao-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="互联网协议入门（一）">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python小课堂07 - 基本数据类型列表篇">
                         
-                        <span class="card-title">互联网协议入门（一）</span>
+                        <span class="card-title">python小课堂07 - 基本数据类型列表篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、概述1.1 五层模型互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。
-用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。
-如何分层有不</div>
+                    <div class="summary">python小课堂07 - 基本数据类型列表篇python中组的概念？在前面的小课堂中，我每介绍一个新的数据类型的概念，都会去用一个现实世界的实例来引导出新的概念，这次依然是这样，因为计算机中的一些概念就是通过现实世界的例子而映射进去的！本</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
-                                    理解计算机
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
                                 </a>
                             
                             
@@ -563,33 +594,39 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/13/hello-world/">
+                <a href="/2019/08/14/python-xiao-ke-tang-05-ji-ben-shu-ju-lei-xing-zi-fu-chuan-pian-chong-yao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python小课堂05 - 基本数据类型字符串篇(重要)">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python小课堂05 - 基本数据类型字符串篇(重要)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">python小课堂05 - 基本数据类型字符串篇(重要)什么是字符串？
+题西林壁         作者：苏轼横看成岭侧成峰，远近高低各不同。不识庐山真面目，只缘身在此山中。
+
+如上面的诗词一样，将其映射到我们计算机程序中，显然不是前几张介绍</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Super Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Super&amp;Huang">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="python小课堂11 - 变量篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂11 - 变量篇前言上周偷了点懒，周四到周末断更了，后来思考了下，前一阵儿的更新频率达到了日日更，虽然每章小知识都很详细。。但是同学建议进度加快，emmm….然后我决定拉长更新周期，两到三天更新一次，同时相对的进度也会加快">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Super&amp;Huang</title>
+    <title>python小课堂11 - 变量篇 | Super&amp;Huang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +280,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        python小课堂11 - 变量篇
                     </div>
                 </div>
             </div>
@@ -313,27 +313,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-13
+                    2019-08-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -349,19 +358,68 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="python小课堂11-变量篇"><a href="#python小课堂11-变量篇" class="headerlink" title="python小课堂11 - 变量篇"></a>python小课堂11 - 变量篇</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上周偷了点懒，周四到周末断更了，后来思考了下，前一阵儿的更新频率达到了日日更，虽然每章小知识都很详细。。但是同学建议进度加快，emmm….然后我决定拉长更新周期，两到三天更新一次，同时相对的进度也会加快，正是因为python的基础数据类型很重要，所以我才总结的非常细致！后续的小课堂中，我认为重要的知识点依然会写的很细，而那些介绍就能看懂的知识点，简单的总结下即可了！立下一个flag，当我总结完所有python知识点时，接下来就是好玩的各种实战篇文章(例如分析微信朋友圈的数据…..)扑面而来的节奏！</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><blockquote>
+<p>变量：<br>在编程语言中有着变量的概念，而相对应的python中定义变量是一件非常容易的事情，还是老规矩，将现实生活中的例子引入计算机世界来加以解释。高中我们所学过的数学有个方程式的概念： y = x + 1<br>而这样的公式中x就是变量! 对应到python中，一个不确定的数据的命名就是变量。(看例子就瞬间理解了！)</p>
+</blockquote>
+<p>冲啊！IDLE：<br><img src="https://img-blog.csdnimg.cn/20181122201027878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">=</span>  <span class="token punctuation">:</span>  等号在这里不是数学上的概念。
+      在编程世界，<span class="token operator">=</span>代表的是赋值，理解为给python的基本数据取名字的方式即可！
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>在编程中，变量的名称是需要注意的，一定要见名知意！尽量去用原生的英文单词去表示变量，避免用汉语拼音来命名。。。。这是编程界的忌讳！举个例子吧，我现在要定义一个叫“学习python”的变量名：</p>
+<pre class=" language-python"><code class="language-python">错误×：xuexi_python <span class="token operator">=</span> <span class="token string">'我要学习python'</span>
+正确√：study_python <span class="token operator">=</span> <span class="token string">'我要学习python'</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<blockquote>
+<p>Tips:<br>python中，变量名称可以由字母、数字、下划线组成。其中数字不能在第一位，python自身关键字不能用于变量名。python 的变量名定义是区分大小写的！定义A和a是不一样的。</p>
+</blockquote>
+<p>验证：<br><img src="https://img-blog.csdnimg.cn/20181122201116906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>使用关键词命名的(以type为例)错误：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181122201125826.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>通过print()进行查看：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181122201135711.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="你不知道的变量小知识点"><a href="#你不知道的变量小知识点" class="headerlink" title="你不知道的变量小知识点"></a>你不知道的变量小知识点</h3><p>先来看个问题，有如下代码：</p>
+<pre class=" language-python"><code class="language-python">将<span class="token number">1</span>赋值给a，再把a赋值给b，此时修改a，那么b的值是多少？
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> a
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> 此处你觉得会输出什么？
+
+
+将列表<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>赋值给a，同理将a赋值给b，修改list下标第一个元素，
+列表a、b分别会是什么内容？
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> a
+<span class="token operator">>></span><span class="token operator">></span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'你好'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> 此处你觉得会输出什么？
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> 此处你觉得会输出什么？
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<p>结论：<br><img src="https://img-blog.csdnimg.cn/20181122201211689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>用图解释上面两种问题：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181122201219979.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>第一段代码对应上图，三步，清晰明了解释了int的值操作。划重点：值不可变！</p>
+<p><img src="https://img-blog.csdnimg.cn/20181122201229150.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>第二段代码对应上图，三步，清晰明了解释了list的值操作。划重点：<code>值可变！</code></p>
+<blockquote>
+<p>Tips：<br>在python中(Java也有！其他语言也有…)，基础数据变量类型是区分值类型和引用类型的。而int、str、tuple属于值类型(内容不可变！)，list、set、dict属于引用类型(内容可修改！)。</p>
+</blockquote>
+<p>如何理解可变不可变?继续用实例来说明！</p>
+<p>下面的代码，你认为会输出什么呢？之前说过字符串不可变！你觉得这样的代码正确么！</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token string">'hello'</span>
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">'python'</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>实验不可变性与可变性：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181122201317734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>引入一个python新方法：</p>
+<pre class=" language-python"><code class="language-python">id<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> x是变量，通过id可以查看x对应的内存地址。
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181122201341181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>再来看看tuple 和 list：</p>
+<p><img src="https://img-blog.csdnimg.cn/2018112220134942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>本次小课堂主要介绍了变量的概念，以及变量的命名规范(切忌拼音用法，使用原生英语哟！)，对于变量的重点：值类型和引用类型，了解了这两点，在编程语言中是通用的知识点！通过id()可以查看相应变量的内存地址，用于判断变量是否属于同一个元素。</p>
 
             </div>
             <hr>
@@ -502,7 +560,7 @@
                     </span>
                     <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/13/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/14/python-xiao-ke-tang-11-bian-liang-pian/" class="b-link-green">python小课堂11 - 变量篇</a>
                 </p>
             </div>
         </div>
@@ -527,29 +585,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/13/hu-lian-wang-xie-yi-ru-men-yi/">
+                <a href="/2019/08/14/python-xiao-ke-tang-12-yun-suan-fu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="互联网协议入门（一）">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="python小课堂12 - 运算符篇">
                         
-                        <span class="card-title">互联网协议入门（一）</span>
+                        <span class="card-title">python小课堂12 - 运算符篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、概述1.1 五层模型互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。
-用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。
-如何分层有不</div>
+                    <div class="summary">python小课堂12 - 运算符篇前言继续回归python小课堂！这几天状态有点不佳，本章小课堂只想上图，不想说话！看图吧…..
+1.算数运算符：
+
+没什么好说的，前面基本介绍的滚瓜烂熟了。
+2.赋值运算符：
+
+没什么好说的，直接看下面代</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
-                                    理解计算机
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
                                 </a>
                             
                             
@@ -563,33 +625,39 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/13/hello-world/">
+                <a href="/2019/08/14/python-xiao-ke-tang-10-ji-ben-shu-ju-lei-xing-zhong-pian-ji-he-he-zi-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python小课堂10 - 基本数据类型终篇集合和字典">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python小课堂10 - 基本数据类型终篇集合和字典</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">python小课堂10 - 基本数据类型终篇集合和字典基础类型集合python中集合的概念就像我们高中数学学过的集合概念相似，集合英文：set。下面来看下集合的写法：
+
+重点，说下集合的特色：
+>>> {1,2,3,4,5,6} - {3,</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Super Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

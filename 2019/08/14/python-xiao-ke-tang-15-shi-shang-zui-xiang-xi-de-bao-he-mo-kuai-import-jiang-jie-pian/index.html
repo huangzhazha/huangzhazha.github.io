@@ -1,0 +1,920 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="python小课堂15 - 史上最详细的包和模块import讲解篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂15 - 史上最详细的包和模块import讲解篇前言在大量的代码设计中，我们不可能将所有代码都写在一个.py文件，所以有了包、模块，而为了代码可以重复利用(复用性)，就有了类、函数的概念。类和函数在下次介绍。
+python">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>python小课堂15 - 史上最详细的包和模块import讲解篇 | Super&amp;Huang</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Super&Huang</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Super&Huang</div>
+        <div class="logo-desc">
+            
+            为人善，福虽未至，祸已远离。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/huangzhazha" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/huangzhazha" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        python小课堂15 - 史上最详细的包和模块import讲解篇
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-14
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        11 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="python小课堂15-史上最详细的包和模块import讲解篇"><a href="#python小课堂15-史上最详细的包和模块import讲解篇" class="headerlink" title="python小课堂15 - 史上最详细的包和模块import讲解篇"></a>python小课堂15 - 史上最详细的包和模块import讲解篇</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在大量的代码设计中，我们不可能将所有代码都写在一个.py文件，所以有了<strong>包、模块</strong>，而为了代码可以重复利用(复用性)，就有了<strong>类、函数</strong>的概念。类和函数在下次介绍。</p>
+<h3 id="python中的包"><a href="#python中的包" class="headerlink" title="python中的包"></a>python中的包</h3><p>python中的包，对应到计算机中，可以理解为文件夹，但是文件加下必须有一个名为<strong>init</strong>.py的文件，若没有此文件，python则会认为其只是一个普通的文件夹。</p>
+<p>打开pycharm，创建一个包，如下：<br><img src="https://img-blog.csdnimg.cn/20181210123807417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210123815786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="python中的模块"><a href="#python中的模块" class="headerlink" title="python中的模块"></a>python中的模块</h3><p>python中的模块就非常好理解了，实际上，之前所有的.py文件，我们都可以称之为一个模块。单独的一个py文件就是一个模块。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210123829279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2018121012383667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>test1和test2不同区别就是test2是和package这个包是同级目录，而test1是属于package包的。</p>
+<p>再来看下总的概念：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210123848575.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="包和模块的引入"><a href="#包和模块的引入" class="headerlink" title="包和模块的引入"></a>包和模块的引入</h3><p><strong>1.<font color="gree">模块处于同级目录</font>（<font color="red">并且不在包下 </font>）</strong></p>
+<p>当我们想在一个模块中使用另一个模块中的变量时，如何操作呢？test2、test3处于同一级目录。<br><img src="https://img-blog.csdnimg.cn/20181210124000740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>我想在test3中引入test2的变量，test2.py中有个变量a = 2。<br><img src="https://img-blog.csdnimg.cn/2018121012401058.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124020703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124026701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如上所示,只需要在当前模块，用import语句，即可导入模块，具体使用的时候需要用模块的名字.变量。</p>
+<p><strong>import 后面必须是模块的名称！ ——&gt; import modul name</strong></p>
+<p>还有一种写法如下图pycharm中：<br><img src="https://img-blog.csdnimg.cn/20181210124046820.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如上所示,只需要在当前模块，     <strong>from 模块名字 import  变量</strong>     </p>
+<p>2.<strong><font color="gree">模块处于同级目录</font>（<font color="red">在同一包下</font>）</strong></p>
+<p>来看下，test1，test4都属于package包下的模块。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124146679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>test1.py中有着字符串a = ‘I am success!’<br><img src="https://img-blog.csdnimg.cn/20181210124156272.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>在test4.py中引用test1.py中的a，如何引用呢？</p>
+<p>可以看到如下：<br><img src="https://img-blog.csdnimg.cn/20181210124206523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python">关键语法：<span class="token keyword">import</span> 包名<span class="token punctuation">.</span>模块名 <span class="token keyword">as</span> 别名
+</code></pre>
+<p><font color="red">但是！！！！！！！如果我们脱离pycharm，找到本机相应的python目录，通过cmd来运行下，看下效果如何：</font></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124239555.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124245133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以清晰的看到上图，通过命令行模式执行就会报错！错误显示模块没有被找到：没有模块叫’package’。这是为什么呢？在pycharm中通过右键run as运行test4，可以看到控制台成功输出，而本地调用命令行的形式就报错了！</p>
+<p>打开pycharm的setting，搜索 python console，右侧其中有一项，add content roots to pythonpath，默认pycharm是勾选上此项的。此项的意思是将内容的根路径加到python的环境变量路径下。<br><img src="https://img-blog.csdnimg.cn/20181210124259646.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到上图下面代码块里写着一堆代码，正是这段代码，我们才可以在pycharm中正确运行。</p>
+<p>我们可以在test1.py里来看下sys.path，顺便打印看下结果。<br><img src="https://img-blog.csdnimg.cn/2018121012431271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>pycharm控制台输出：</p>
+<pre class=" language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'F:\\pycharm\\python14\\package'</span><span class="token punctuation">,</span> <span class="token string">'F:\\pycharm\\python14'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\python36.zip'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\DLLs'</span><span class="token punctuation">,</span> <span class="token string">'D:\\python3.6\\lib'</span><span class="token punctuation">,</span> <span class="token string">'D:\\python3.6'</span><span class="token punctuation">,</span> 
+<span class="token string">'C:\\Users\\sy\\AppData\\Roaming\\Python\\Python36\\site-packages'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\win32'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\win32\\lib'</span><span class="token punctuation">,</span>
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\Pythonwin'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>实际通过命令行输出，应该没有’F:\pycharm\python14’ 这一项，因为这一项是pycharm中setting自动加上的！</p>
+<p>实际控制台输出：</p>
+<pre class=" language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'F:\\pycharm\\python14\\package'</span><span class="token punctuation">,</span>
+<span class="token string">'D:\\python3.6\\python36.zip'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\DLLs'</span><span class="token punctuation">,</span> <span class="token string">'D:\\python3.6\\lib'</span><span class="token punctuation">,</span> <span class="token string">'D:\\python3.6'</span><span class="token punctuation">,</span> 
+<span class="token string">'C:\\Users\\sy\\AppData\\Roaming\\Python\\Python36\\site-packages'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\win32'</span><span class="token punctuation">,</span> 
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\win32\\lib'</span><span class="token punctuation">,</span>
+<span class="token string">'D:\\python3.6\\lib\\site-packages\\Pythonwin'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>sys.path是一个list。默然情况下python导入文件或者模块的话，他会先在sys.path里找模块的路径。如果没有的话，程序就会报错。可以看到，sys路径下有package的包名，而没有test4.py中引用test1.py模块。</p>
+<p>而pycharm能够成功运行，正是因为它已经帮我们把项目的根路径添加到了python的环境变量中。所以我们仿照其类似写法也可以完成！</p>
+<p>解决方案：</p>
+<p>这里不得不说几个重要的python自带模块了，如下：</p>
+<p>① </p>
+<p><code>__file__   : python模块自身的名称</code><br>pycharm打印下<strong>file</strong>:</p>
+<p>可以看到pycharm会将模块的绝对路径输出到控制台上。</p>
+<p><img src="https://img-blog.csdnimg.cn/2018121012441778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>在用命令行执行下看看：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124428327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>python额外小知识：可以看到上图有一个<strong>pycache</strong>的文件夹，这个文件夹在pycharm的目录中，我们是看不到的，那么此文件夹的意义何在呢？点进去看下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124438969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Python程序运行时不需要编译成二进制代码，而直接从源码运行程序，简单来说是，Python解释器将源码转换为字节码，然后再由解释器来执行这些字节码。而解释器的具体工作：<br>1、完成模块的加载和链接。<br>2、将源代码编译为PyCodeObject对象(即字节码)，写入内存中，供CPU读取。<br>3、从内存中读取并执行，结束后将PyCodeObject写回硬盘当中，也就是复制到.pyc或.pyo文件中，以保存当前目录下所有脚本的字节码文件。<br>4、若再次执行该脚本，它先检查【本地是否有上述字节码文件】和【该字节码文件的修改时间是否在其源文件之后】，是就直接执行，否则重复上述步骤。<br>第一次执行代码的时候，Python解释器已经把编译的字节码放在<strong>pycache</strong>文件夹中，这样以后再次运行的话，如果被调用的模块未发生改变，那就直接跳过编译这一步，直接去<strong>pycache</strong>文件夹中去运行相关的 *.pyc 文件，大大缩短了项目运行前的准备时间。<br>CSDN来源：<br><a href="https://blog.csdn.net/index20001/article/details/73501375" target="_blank" rel="noopener">https://blog.csdn.net/index20001/article/details/73501375</a></p>
+</blockquote>
+<p>继续回归正题：</p>
+<p>②</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token punctuation">,</span>os   ：  sys ，os模块是python系统自带模块
+
+os模块： operate system 操作系统的意思，一般可以通过调用此模块来对系统进行相关操作
+
+sys 模块： system 系统的意思，通过此模块来实现对python自定义包和模块的导入
+</code></pre>
+<p>有了以上两个知识点，我们可以对test4.py进行如下操作：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token punctuation">,</span>os
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>因为pycharm会对<strong>file</strong>进行路径补充，所以我们用命令行来执行test4.py：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124554768.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到上图结果：</p>
+<pre class=" language-python"><code class="language-python">__file__             模块名字
+test4<span class="token punctuation">.</span>py           
+os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>     模块名字的绝对路径
+F<span class="token punctuation">:</span>\pycharm\python14\package\test4<span class="token punctuation">.</span>py
+os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span>    模块的包名绝对路径
+F<span class="token punctuation">:</span>\pycharm\python14\package
+
+os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+F<span class="token punctuation">:</span>\pycharm\python14                           项目本身的绝对路径
+</code></pre>
+<p>通过最后一步，我们可以将项目本身的路径直接拼入python的sys下</p>
+<pre class=" language-python"><code class="language-python">base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>base_path<span class="token punctuation">)</span>
+</code></pre>
+<p>验证究竟有没有加到我们的python环境变量中，最终代码为：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token punctuation">,</span> os
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>base_path<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+</code></pre>
+<p>通过命令行执行来看下：<br><img src="https://img-blog.csdnimg.cn/20181210124648899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>有了以上的所有操作步骤，我们可以完美的将test1.py的a变量引入test4.py中了！来看下命令执行：</p>
+<pre class=" language-python"><code class="language-python">
+<span class="token keyword">import</span> sys<span class="token punctuation">,</span> os
+base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>
+                            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>base_path<span class="token punctuation">)</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>  sys拼接 一定要在自定义包引入之前定义   <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token keyword">import</span> package<span class="token punctuation">.</span>test1 <span class="token keyword">as</span> test1       注意<span class="token keyword">import</span>的顺序。
+<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181210124708623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>成功！</p>
+<p>写到这里涉及的知识点就已经这么多了。。。继续写。。。</p>
+<p><strong>3.<font color="gree">包处于同级目录</font>（<font color="red">包和包同级，包1下的模块引入包2下的模块变量</font>）</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124753365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到，通过from test3 import c，pycharm中是正常输出的，控制台是报错的！原因实际和“<strong>2.模块处于同级目录（在同一包下）</strong>”的解释是一样的，只需要在引入自定义包之前，将我们项目的根路径加到python的系统变量中即可。</p>
+<p><strong>4.<font color="gree">模块处于不同级目录</font>（<font color="red">包和模块同级，模块引入包下模块的变量</font>）</strong><br><img src="https://img-blog.csdnimg.cn/2018121012483582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124841333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181210124850552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>若属于3的情况，可以看到，不需要对python系统进行sys.append，可以正常使用import 或者 from 语句进行导入。</p>
+<p><strong>5.<font color="gree">模块处于不同级目录</font>（<font color="red">包和模块同级，包下模块引入与包模块同级的变量</font>）</strong></p>
+<p>test3.py 中有：<br><code>c = 123455666</code><br>在packeage下的test1.py调用：<br><img src="https://img-blog.csdnimg.cn/2018121012495237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到，通过from test3 import c，pycharm中是正常输出的，控制台是报错的！原因实际和“2.模块处于同级目录（在同一包下）”的解释是一样的，只需要在引入自定义包之前，将我们项目的根路径加到python的系统变量中即可。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token punctuation">,</span> os
+base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>base_path<span class="token punctuation">)</span>
+<span class="token keyword">from</span> test3 <span class="token keyword">import</span> c
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20181210125012291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="模块之前的相对引入"><a href="#模块之前的相对引入" class="headerlink" title="模块之前的相对引入"></a>模块之前的相对引入</h3><p>什么叫相对引入呢？相对路径大家可能听说过，相对引入和相对路径是一个道理的，比如 .代表的是当前目录，..代表的是上级目录,此处的写法就是相对路径，相对于某个文件来说，即相对！</p>
+<p>实际上，在<strong>2.模块处于同级目录（在同一包下）中</strong>，还有一种相对引入的写法，但是对于test4.py引入test1.py来说，不能直接运行test4.py，否则会报错。来看下：<br><img src="https://img-blog.csdnimg.cn/20181210125051768.png" alt="在这里插入图片描述"></p>
+<p>test1.py中有个a字符串：</p>
+<pre class=" language-python"><code class="language-python">test1<span class="token punctuation">.</span>py
+a <span class="token operator">=</span> <span class="token string">'I am success !'</span>
+</code></pre>
+<p>test4.py中，我用from .test1 import a来引入test1.py的变量a，注意，包下同级目录，我使用的是.test1  ！！！！</p>
+<pre class=" language-python"><code class="language-python">test4<span class="token punctuation">.</span>py
+
+<span class="token keyword">from</span> <span class="token punctuation">.</span>test1 <span class="token keyword">import</span> a
+b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">'I am test4.py import .test1'</span>
+</code></pre>
+<p>如果此时我直接将test4.py运行，并且打印b，就会报错！</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210125131313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python">ModuleNotFoundError<span class="token punctuation">:</span> No module named <span class="token string">'__main__.test1'</span><span class="token punctuation">;</span> <span class="token string">'__main__'</span> <span class="token keyword">is</span> <span class="token operator">not</span> 
+a package
+</code></pre>
+<p>如果此时，我通过test2.py间接行调用test4.py中的b</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> package<span class="token punctuation">.</span>test4 <span class="token keyword">import</span> b
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+</code></pre>
+<p>无论是pycharm还是命令行，都是有成功运行的：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210125222499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>也就是说python对于相对引入来说，主动引入的函数不能作为主体去运行！</p>
+<h3 id="pycharm中可能会遇到的import报错"><a href="#pycharm中可能会遇到的import报错" class="headerlink" title="pycharm中可能会遇到的import报错"></a>pycharm中可能会遇到的import报错</h3><p>有人可能会遇到，当一个新项目导入到pycharm中，python代码的import有可能会报错，可以将项目设置为根路径，这样import错误即可消失，操作如下：<br><img src="https://img-blog.csdnimg.cn/20181210125243291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="包和模块自身的额外小知识点"><a href="#包和模块自身的额外小知识点" class="headerlink" title="包和模块自身的额外小知识点"></a>包和模块自身的额外小知识点</h3><ol>
+<li>关于包下的 <strong>init</strong>.py</li>
+</ol>
+<p>init,中文意思是初始化的意思，而<strong>init</strong>.py实际上就是作为包名来配合的，当我们调用一个包时，第一步python就会去调用<strong>init</strong>.py模块，所以，经常我们可以将包下的<strong>init</strong>.py中放入一些需要初始化的操作。</p>
+<p>举个例子：<br><img src="https://img-blog.csdnimg.cn/20181210125258811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python">__init__<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
+init_a <span class="token operator">=</span> <span class="token string">'I am __init__.py'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>init_a<span class="token punctuation">)</span>
+</code></pre>
+<p>在package包下定义了初始化的字符串。<br>而test2.py调用package下的test1.py中的a变量时：</p>
+<pre class=" language-python"><code class="language-python">test2<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
+<span class="token keyword">from</span> package<span class="token punctuation">.</span>test1 <span class="token keyword">import</span> a
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+test1<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
+a <span class="token operator">=</span> <span class="token string">'I am success !'</span>
+</code></pre>
+<p>可以看到下图运行结果,先输出了初始化模块中的字符串:</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210125334835.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="2">
+<li>关于模块中的限定变量写法</li>
+</ol>
+<p>依然是test2.py引入test1.py的变量：<br><img src="https://img-blog.csdnimg.cn/20181210125353559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre class=" language-python"><code class="language-python">
+test2<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
+<span class="token keyword">from</span> package<span class="token punctuation">.</span>test1 <span class="token keyword">import</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+test1<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
+__all__ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span>
+a <span class="token operator">=</span> <span class="token string">'I am success !'</span>
+b <span class="token operator">=</span> <span class="token string">'I am fail !'</span>
+c <span class="token operator">=</span> <span class="token string">'I am fuc***  you!!! !'</span>
+</code></pre>
+<p>在test2中引入test1通过import单独引入三个变量，运行结果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210125409237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>若将import 后面改成* ，则会限制变量。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181210125426159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>而此处所说，就是因为在test1.py中有着<strong>all</strong> = []  ,这样的写法可以限定住import <em> 的限制，test4.py import </em>时，则会被限制住骂人的语句！</p>
+<h3 id="import-模块的万金油方法"><a href="#import-模块的万金油方法" class="headerlink" title="import 模块的万金油方法"></a>import 模块的万金油方法</h3><p>上面说了这么多种情况，如果你实在是记不住，那么请记住一点，万金油的import方式，就是在你所有模块的入口模块处，以下面代码为例，将你项目本身的绝对路径拼入到python 的系统path下，<strong><font color="red">这样自定义的包一定不会出错！！！</font></strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token punctuation">,</span> os
+base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>
+                            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>base_path<span class="token punctuation">)</span>
+</code></pre>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/08/14/python-xiao-ke-tang-15-shi-shang-zui-xiang-xi-de-bao-he-mo-kuai-import-jiang-jie-pian/" class="b-link-green">python小课堂15 - 史上最详细的包和模块import讲解篇</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/08/14/python-xiao-ke-tang-16-han-shu-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="python小课堂16 - 函数篇">
+                        
+                        <span class="card-title">python小课堂16 - 函数篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">python小课堂16 - 函数篇前言函数篇 —— 说起函数，大家高中应该都学过类似的概念，函数指一个量随着另一个量的变化而变化，而在编程中，函数的概念则不尽相同。举个例子，比如打过dota的同学都知道，在dota中通过shift可以对英雄</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/14/python-xiao-ke-tang-14-dai-ma-bian-ji-qi-pycharm-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python小课堂14 - 代码编辑器PyCharm篇">
+                        
+                        <span class="card-title">python小课堂14 - 代码编辑器PyCharm篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">python小课堂14 - 代码编辑器PyCharm篇前言古人云：工欲善其事必先利其器！写代码也一样，虽然好多人都说，初学者不推荐使用很高大上，智能，自动化的编辑器，但是我想说：“强大的，智能的东西为什么就不推荐新手用呢？！！”我自学jav</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://huangzhazha.github.io/" target="_blank">Super Huang</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">28.5k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/huangzhazha" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:150027608@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=150027608" class="tooltipped" data-tooltip="QQ联系我: 150027608" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

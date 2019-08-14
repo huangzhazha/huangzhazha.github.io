@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Super&amp;Huang">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="python小课堂13 - 流程控制语法篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂13 - 流程控制语法篇前言ε=(´ο｀*)))唉，上篇文章写的软文，即使分享了朋友圈。。。发现阅读量也不是那么大呀，对比了下隔壁的那位老大哥，人家分享朋友圈就70+的阅读量。。。还是鸡汤文！算了，我还是踏踏实实写我的技术">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Super&amp;Huang</title>
+    <title>python小课堂13 - 流程控制语法篇 | Super&amp;Huang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +280,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        python小课堂13 - 流程控制语法篇
                     </div>
                 </div>
             </div>
@@ -313,27 +313,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-13
+                    2019-08-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -349,19 +358,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="python小课堂13-流程控制语法篇"><a href="#python小课堂13-流程控制语法篇" class="headerlink" title="python小课堂13 - 流程控制语法篇"></a>python小课堂13 - 流程控制语法篇</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>ε=(´ο｀*)))唉，上篇文章写的软文，即使分享了朋友圈。。。发现阅读量也不是那么大呀，对比了下隔壁的那位老大哥，人家分享朋友圈就70+的阅读量。。。还是鸡汤文！算了，我还是踏踏实实写我的技术吧~今天继续python小课堂的知识分享。今天要介绍的是python中的程序控制关键词，也就是条件，以及python的包、模块的概念。</p>
+<h3 id="条件控制、循环控制"><a href="#条件控制、循环控制" class="headerlink" title="条件控制、循环控制"></a>条件控制、循环控制</h3><p>在步入正题之前，先来阐述一个概念 — 表达式(运算符 和 操作数所构成的)。</p>
+<p>它长什么样子呢？如下：</p>
+<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+a <span class="token operator">></span> b
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>而现在写的代码，就是用类似上面的表达式所构成的，我们可以通过条件控制，循环控制来使代码形成具有逻辑的体系。</p>
+<p>打开IDEL，按下<strong>Ctrl + n</strong>打开文本编辑器，后续设计到代码块的格局。或者点击idle的File — &gt; New File 也是一样的。</p>
+<h5 id="1-条件控制-if-，if-else，-if-elif"><a href="#1-条件控制-if-，if-else，-if-elif" class="headerlink" title="1.条件控制  (if ，if  else， if elif)"></a>1.条件控制  (if ，if  else， if elif)</h5><p>之前一直说过的，计算机世界中实际上映射了现实生活中的例子！在现实生活中，举个例子：如果我当年好好学习，那么我现在早就是大神了！这样的话语就是条件控制，当然现实世界并不存在如果，说多了如果都是侥幸心理罢了。</p>
+<p>if代表的就是如果。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129122749846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>需要注意的是：Python 不想其他语言通过{}来控制代码的作用域，在之前的小课堂就说过，写代码时通过4空格来控制！</p>
+<p>如果条件为真，就走条件里的内容，否则就走其它的条件里的内容，else就是其它的意思。</p>
+<p>if - else:</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129122805471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>if - elif：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129122815315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>给个经常用到的小例子吧，不要小瞧if - else！我们生活中的各种账号登录，可以来写一个小程序看看：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129122823582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>要说明的是，我上面的截图中，有一点是不符合python官方规范的！赋值的前两步骤，是两个恒定不变的字符串，这样的东西在编程中称之为<strong>常量</strong>！常量正规写法<strong>应该大写</strong>！所以下面我修改了….</p>
+<p>代码本文版：</p>
+<pre class=" language-python"><code class="language-python">CORRECT_USER <span class="token operator">=</span> <span class="token string">'sssyyy'</span>
+CORRECT_PASSWORD <span class="token operator">=</span> <span class="token string">'123456'</span>
+
+username <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入登录的用户名:\n'</span><span class="token punctuation">)</span>
+password <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入登录的密码:\n'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> CORRECT_USER <span class="token operator">==</span> username <span class="token operator">and</span> CORRECT_PASSWORD <span class="token operator">==</span> password <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登陆成功了！'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'用户名或者密码错误！'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>通过上面的小程序，将前几章的小知识串联起来了一部分。通过if来判断是否登录成功，有变量的赋值操作，还有 and 、== 操作符，以及input()这样的python自带方法。</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20181129122905538.png" alt="在这里插入图片描述"><br>所以当我们输入1的时候，实际上进去的是字符串类型，这也是为什么我小程序中是将字符串赋值给了变量。</p>
+<h5 id="2-循环控制-while-，for-…-in-，continue，break"><a href="#2-循环控制-while-，for-…-in-，continue，break" class="headerlink" title="2. 循环控制   (while  ，for …  in ，continue，break)"></a>2. 循环控制   (while  ，for …  in ，continue，break)</h5><p>循环控制：依然是以现实生活中举例子吧，有些朋友们一定听说过暴力破解，在登录某些网站时，通过不断对其密码的排列组合进行登录，也就是所谓的穷举。每登录一次，换一次密码组合尝试，最终达到对比出正确的密码进行登录。而这种思想，就是在循环控制下实现的。</p>
+<p>while中文含义是在…期间。</p>
+<p>while:</p>
+<p><img src="https://img-blog.csdnimg.cn/2018112912292733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如何跳出呢？继续写个小例子来演示，现在有个场景，每次将变量a加2，如果当a大于10，则结束while循环。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129122936595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Tips：<br><code>`</code>python<br>a = 1<br>print(f’当前的值为 {a}’)<br>f’{变量名字}’  —–&gt;  这样的语法是python3.6 以上的新特性，支持直接将字符串进行格式化。而不需要自己手动在后面累加。</p>
+</blockquote>
+<p>while - else：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123033951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>for ，为了的意思，for关键词在之前有介绍过，我们可以通过for来遍历序列（str、list、tuple）、字典(dict)、集合(set)这样的类型。。</p>
+<p>for：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123047324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Tips：<br>print()第二个参数添加end，就是每次追加’’，而print默认追加\n换行符<br>print(‘’,end = ‘’)</p>
+</blockquote>
+<p>来介绍一个python中比较屌的内置方法 — &gt; range()。</p>
+<p>range()经常与for套用在一起使用，比如现在需要循环10次，每次循环打印出数字！如何去写：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123114328.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如果每次递增2个数字，再去打印呢？</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123122987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如果我想倒过来打印呢？</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123133376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Tips:<br>range(a,b,c)  —&gt;  a，起始的数值 ； b，结束的数值； c，步长，类似之前介绍的切片特性的步长机制！</p>
+</blockquote>
+<h3 id="循环控制的跳出"><a href="#循环控制的跳出" class="headerlink" title="循环控制的跳出"></a>循环控制的跳出</h3><p>在上面的while中，我介绍了通过一种“活”条件来实现跳出，那么有没有方法直接可以跳出循环控制呢！一定是有的，就是python中的关键词:<strong>break,continue</strong></p>
+<p>break：中文意思打破，中断！是不是很通俗易懂，再循环中加上break字眼，即可中断程序。</p>
+<p>场景：数字a初始值为1，在while循环中，每次循环加1，当a = 10时，中断程序，并且输出中断程序。(初学者可以自己去idle中尝试动手！)</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123206659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>continue：中文有继续的意思，所以在使用循环时符合当前条件，continue后面的代码都<strong>不执行</strong>，跳过后进行继续下一次循环。</p>
+<p>场景：数字a初始值为1，在for循环中，每次将a累加1，一共循环20次并打印输出结果，在循环第10次的时候，跳过累加，打印出当前a的值。<br><img src="https://img-blog.csdnimg.cn/20181129123219286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>到现在python的流程控制也讲完了。基本上到这里如果有思路，爱动手的同学，已经可以自己开始编程了。无论学习哪种语言，重要的还是编程的思想！有了思想，无非就是需要熟悉熟悉语法罢了。来看看到现在为止，点亮了多少小图标了！</p>
+<p><img src="https://img-blog.csdnimg.cn/20181129123241531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
             </div>
             <hr>
@@ -502,7 +568,7 @@
                     </span>
                     <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/13/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/14/python-xiao-ke-tang-13-liu-cheng-kong-zhi-yu-fa-pian/" class="b-link-green">python小课堂13 - 流程控制语法篇</a>
                 </p>
             </div>
         </div>
@@ -527,29 +593,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/13/hu-lian-wang-xie-yi-ru-men-yi/">
+                <a href="/2019/08/14/python-xiao-ke-tang-14-dai-ma-bian-ji-qi-pycharm-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="互联网协议入门（一）">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python小课堂14 - 代码编辑器PyCharm篇">
                         
-                        <span class="card-title">互联网协议入门（一）</span>
+                        <span class="card-title">python小课堂14 - 代码编辑器PyCharm篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、概述1.1 五层模型互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。
-用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。
-如何分层有不</div>
+                    <div class="summary">python小课堂14 - 代码编辑器PyCharm篇前言古人云：工欲善其事必先利其器！写代码也一样，虽然好多人都说，初学者不推荐使用很高大上，智能，自动化的编辑器，但是我想说：“强大的，智能的东西为什么就不推荐新手用呢？！！”我自学jav</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
-                                    理解计算机
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
                                 </a>
                             
                             
@@ -563,33 +627,42 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/13/hello-world/">
+                <a href="/2019/08/14/python-xiao-ke-tang-12-yun-suan-fu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="python小课堂12 - 运算符篇">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python小课堂12 - 运算符篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">python小课堂12 - 运算符篇前言继续回归python小课堂！这几天状态有点不佳，本章小课堂只想上图，不想说话！看图吧…..
+1.算数运算符：
+
+没什么好说的，前面基本介绍的滚瓜烂熟了。
+2.赋值运算符：
+
+没什么好说的，直接看下面代</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Super Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

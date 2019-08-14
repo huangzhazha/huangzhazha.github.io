@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Super&amp;Huang">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="python小课堂03 - 基本数据类型进制篇, Super&amp;Huang">
+    <meta name="description" content="python小课堂03 - 基本数据类型进制篇什么是进制？
+来自百度:进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Super&amp;Huang</title>
+    <title>python小课堂03 - 基本数据类型进制篇 | Super&amp;Huang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +281,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        python小课堂03 - 基本数据类型进制篇
                     </div>
                 </div>
             </div>
@@ -313,27 +314,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-13
+                    2019-08-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        978
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -349,19 +359,85 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="python小课堂03-基本数据类型进制篇"><a href="#python小课堂03-基本数据类型进制篇" class="headerlink" title="python小课堂03 - 基本数据类型进制篇"></a>python小课堂03 - 基本数据类型进制篇</h2><h3 id="什么是进制？"><a href="#什么是进制？" class="headerlink" title="什么是进制？"></a>什么是进制？</h3><blockquote>
+<p>来自百度:<br>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。 十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，以此类推，x进制就是逢x进位。</p>
+</blockquote>
+<p>通俗的讲，所为的进制就是一种计数时表示的方法，多少进制，就是当满足此进制时就向高位进一位，比如我们生活中常用的十进制，11 + 9 = 20,个位数1 + 9 = 10，所以此时向高一位进1，最后得出的结果就是20。举个更简单的例子，生活中我们经常以60秒作为1分钟来计数，这也可以理解为一种进制（“60进制”）。</p>
+<blockquote>
+<p>Tips(小常识):<br>二进制： 0 和 1 表示.</p>
+</blockquote>
+<blockquote>
+<p>八进制：0，1，2，3 ，4，5，6，7</p>
+</blockquote>
+<blockquote>
+<p>十六进制：0,1,2,3….9，A,B,C,D,E,F<br>(十六进制从10到15分别用A-F来表示)</p>
+</blockquote>
+<h3 id="动手实践各种进制"><a href="#动手实践各种进制" class="headerlink" title="动手实践各种进制"></a>动手实践各种进制</h3><p>有了上节课的IDLE基础，这次来看下在python中，对应的进制数是如何表达的呢？</p>
+<p>找到python中的idle，前期练手通过这个工具比较便捷，可以右键发送到桌面，下次找就不用费劲了！（后续不在介绍了！）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/E4ianOkSOYIarypl3bSrumybnibYAeg7Z6d4Ktp12KeicibKR0wjFVHHEItOLnf1e0722jBpMsiajMJZnBcJiauwzn4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=""></p>
+<p>先来看下在python中，如何表达二进制，八进制，十六进制以及我们常用的十进制，如下图所示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/E4ianOkSOYIZcgX4n68P9MS9qo8zmEDickEutaKib6eiaZgOSnEa2uqjCmicmSmFZj5icp3zxbIicFLMA3Suf6JRcGsibw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=""></p>
+<p>0b:binary(二进制) 所以小写b</p>
+<p>0o:octal(八进制) 所以小写o</p>
+<p>0x:Hexadecimal(十六进制) 所以小写x</p>
+<p>由上图可以看到结果：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token number">0b1</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0b10</span>
+<span class="token number">2</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0b100</span>
+<span class="token number">4</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0b1000</span>
+<span class="token number">8</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0o1</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0o10</span>
+<span class="token number">8</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0o100</span>
+<span class="token number">64</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0o1000</span>
+<span class="token number">512</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0x1</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0x10</span>
+<span class="token number">16</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0x100</span>
+<span class="token number">256</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">0x1000</span>
+<span class="token number">4096</span>
+<span class="token operator">>></span><span class="token operator">></span> 
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>如何计算出上图的结果呢？</p>
+<p>二进制计算：</p>
+<pre class=" language-python"><code class="language-python"><span class="token number">0b1</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token number">0b10</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">2</span>
+
+<span class="token number">0b100</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">4</span>
+
+<span class="token number">0b1000</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">8</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">8</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<p>这也是学过计算机专业同学嘴中经常说到的“8421”！等同于二进制的1111。</p>
+<p>八进制计算：</p>
+<pre class=" language-python"><code class="language-python"><span class="token number">0o1</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token number">0o10</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">8</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">8</span>
+
+<span class="token number">0o100</span> <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">8</span><span class="token operator">^</span><span class="token number">0</span> <span class="token operator">=</span> <span class="token number">64</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">64</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>……后续以此类推！</p>
+<p>十六进制不列举了，一个道理！</p>
+<p>忘了说了！常规的十进制，实际在python中正常输入即可，就像上一章所讲的整数类型，所表示的都是十进制的数字！</p>
+<h3 id="进制之间的转换"><a href="#进制之间的转换" class="headerlink" title="进制之间的转换"></a>进制之间的转换</h3><p>进制之间的转换，便于我们在不同场景下有着不同的进制表示，就像生活中的时间，时间很短的情况下，咱们可以用秒作为单位来衡量，一旦时间很长，则用分钟，或者小时来计量了，此时需要将秒转换为分钟或者小时，与进制是一个道理的！</p>
+<p>下面来看下python中如何将上述的进制之间做转换。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/E4ianOkSOYIZcgX4n68P9MS9qo8zmEDickAvjZFSzQric3ZugSG3Idsw5QeKKvpKbIypDqskBcu86HNWkpL0Jhs2g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=""></p>
+<p>bin(): 将括号中的数值转为二进制</p>
+<p>int():将括号中的数值转为十进制</p>
+<p>oct():将括号中的数值转为八进制</p>
+<p>hex():将括号中的数值转为十六进制</p>
+<p>以上四个函数方法类似于上章讲到的type()，大家可以先理解这是一种写法即可。在python中这样的语法非常简单，就如同写英语一样，就是一句话！</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>在我们实际的编程过程中，进制可能会接触的非常少，但是依然会用到，再此算是做一个基础的总结吧。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/E4ianOkSOYIZcgX4n68P9MS9qo8zmEDickSibe4Wq2x8tILbeGvA6hYGpK8geA7YuKU5C1od8CNibJtMjYkApaLXrg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=""></p>
 
             </div>
             <hr>
@@ -502,7 +578,7 @@
                     </span>
                     <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/13/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/14/python-xiao-ke-tang-03-ji-ben-shu-ju-lei-xing-jin-zhi-pian/" class="b-link-green">python小课堂03 - 基本数据类型进制篇</a>
                 </p>
             </div>
         </div>
@@ -527,29 +603,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/13/hu-lian-wang-xie-yi-ru-men-yi/">
+                <a href="/2019/08/14/python-xiao-ke-tang-04-ji-ben-shu-ju-lei-xing-bu-er-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="互联网协议入门（一）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="python小课堂04 - 基本数据类型布尔篇">
                         
-                        <span class="card-title">互联网协议入门（一）</span>
+                        <span class="card-title">python小课堂04 - 基本数据类型布尔篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、概述1.1 五层模型互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。
-用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。
-如何分层有不</div>
+                    <div class="summary">python小课堂04 - 基本数据类型布尔篇什么是布尔类型？布尔类型：英文boolean。
+举个栗子，比如今天是愚人节！你发工资了，于是你兴高采烈的去与同事探讨一番，同事偷偷的告诉你，他涨工资了！然后你表示很开心，但是你意识到今天是愚人节</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
-                                    理解计算机
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
                                 </a>
                             
                             
@@ -563,33 +638,36 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/13/hello-world/">
+                <a href="/2019/08/14/python-xiao-ke-tang-02-ji-ben-shu-ju-lei-xing-shu-zi-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python小课堂02 - 基本数据类型数字篇">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python小课堂02 - 基本数据类型数字篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">python小课堂02 - 基本数据类型数字篇什么是基础数据类型 ？在我们的日常生活中，当我们去菜市场买菜交钱的时候，会出现用数字作为计量单位来衡量一个物品值多少钱，而此时交钱的数字有零有整，比如一斤普通鸡蛋的价钱是1元钱整，我们将1元钱称</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Super Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

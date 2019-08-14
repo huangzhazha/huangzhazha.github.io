@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Super&amp;Huang">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="python小课堂10 - 基本数据类型终篇集合和字典, Super&amp;Huang">
+    <meta name="description" content="python小课堂10 - 基本数据类型终篇集合和字典基础类型集合python中集合的概念就像我们高中数学学过的集合概念相似，集合英文：set。下面来看下集合的写法：
+
+重点，说下集合的特色：
+&gt;&gt;&gt; {1,2,3,4,5,6} - {3,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Super&amp;Huang</title>
+    <title>python小课堂10 - 基本数据类型终篇集合和字典 | Super&amp;Huang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +283,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        python小课堂10 - 基本数据类型终篇集合和字典
                     </div>
                 </div>
             </div>
@@ -313,27 +316,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                PythonA基础篇
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-13
+                    2019-08-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        722
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -349,19 +361,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h2 id="python小课堂10-基本数据类型终篇集合和字典"><a href="#python小课堂10-基本数据类型终篇集合和字典" class="headerlink" title="python小课堂10 - 基本数据类型终篇集合和字典"></a>python小课堂10 - 基本数据类型终篇集合和字典</h2><h3 id="基础类型集合"><a href="#基础类型集合" class="headerlink" title="基础类型集合"></a>基础类型集合</h3><p>python中集合的概念就像我们高中数学学过的集合概念相似，集合英文：<code>set</code>。下面来看下集合的写法：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181120123748423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>重点，说下集合的特色：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span> <span class="token operator">-</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+<span class="token operator">>></span><span class="token operator">></span> 
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token operator">>></span><span class="token operator">></span> 
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>特性：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">-</span>  <span class="token punctuation">:</span>   通过减号，可以将后者集合的元素从前者集合剔除。
+
+<span class="token operator">&amp;</span>  <span class="token punctuation">:</span>   通过单与符号，可以将两个集合之间通过元素组合成新的集合。
+
+<span class="token operator">|</span>  <span class="token punctuation">:</span>   通过竖线符号，可以将两个集合做并集处理，相同元素去除。
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<p>创建一个空的集合操作：</p>
+<pre class=" language-python"><code class="language-python">set<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<p><img src="https://img-blog.csdnimg.cn/20181120123943204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>Tips:<br>集合，作为python中的基础数据结构，与上一章节介绍的序列从概念上来有些特性是相反的。其一：集合中是不能存在重复元素的！可以试下{1，1，2，3}这样在idle中查看输出结果是什么！其二：集合中的元素是无序的。</p>
+</blockquote>
+<p>关于集合记住2个特性以及三个操作即可。</p>
+<h3 id="基础类型字典"><a href="#基础类型字典" class="headerlink" title="基础类型字典"></a>基础类型字典</h3><p>python的基础类型—-字典，英文：<code>dict</code>。</p>
+<p>在实际生活中，实际上对应的就是我们的字典。看下图：<br><img src="https://img-blog.csdnimg.cn/20181120124023920.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>当我们使用字典时查找一个陌生的字，需要先对拼音首字母进行检索，再通过其下面的具体拼音定位到具体页数。</p>
+<p>在python中亦是如此，dict的写法如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'ai'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'an'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+上面就是图片中字典对应的拼音加页数。
+通过<span class="token punctuation">{</span>x <span class="token punctuation">:</span> y<span class="token punctuation">}</span>这样的形式来表示字典!其中x、y是python的基础类型！
+在python中我们经常把x、y称之为 key <span class="token operator">-</span> value，中文键值对。
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><font color="red"><strong>注意：dict中的key位置是不可变的基础类型，value位置可以是任意基础类型，后续小课堂中会说到不可变性。</strong></font></p>
+<p>在idle中实验一下：</p>
+<p>实验一：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181120124111863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>实验二：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181120124124548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>对于dict字典的操作，实际上多多注意key-value即可，日常通过key去访问value的场景比较多，应用dict的场景多为物体之间起到了映射关系，就像拼音字典的索引目录一样！</p>
+<h3 id="基础类型终篇的总结"><a href="#基础类型终篇的总结" class="headerlink" title="基础类型终篇的总结"></a>基础类型终篇的总结</h3><p>一图胜过千言万语！接下来看下思维导图的总结：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181120124146467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3M3NDA1NTY0NzI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>点开食用，效果更佳哟！</p>
+<h3 id="个人心声"><a href="#个人心声" class="headerlink" title="个人心声"></a>个人心声</h3><p>到这里，基本上基础数据类型算是总结完了，通过一个星期的日日更新，总结了一遍所有python的基础类型，以及涉及到的知识点，int，float，bool，str，list，tuple，dict。通过这种总结自己对基础数据类型又更深了一步了解，不管有没有人看，hhhh，收获最大的还是自己呀！</p>
 
             </div>
             <hr>
@@ -502,7 +548,7 @@
                     </span>
                     <a href="http://huangzhazha.github.io" class="b-link-green">Super&Huang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/13/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/14/python-xiao-ke-tang-10-ji-ben-shu-ju-lei-xing-zhong-pian-ji-he-he-zi-dian/" class="b-link-green">python小课堂10 - 基本数据类型终篇集合和字典</a>
                 </p>
             </div>
         </div>
@@ -527,29 +573,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/13/hu-lian-wang-xie-yi-ru-men-yi/">
+                <a href="/2019/08/14/python-xiao-ke-tang-11-bian-liang-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="互联网协议入门（一）">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python小课堂11 - 变量篇">
                         
-                        <span class="card-title">互联网协议入门（一）</span>
+                        <span class="card-title">python小课堂11 - 变量篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、概述1.1 五层模型互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。
-用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。
-如何分层有不</div>
+                    <div class="summary">python小课堂11 - 变量篇前言上周偷了点懒，周四到周末断更了，后来思考了下，前一阵儿的更新频率达到了日日更，虽然每章小知识都很详细。。但是同学建议进度加快，emmm….然后我决定拉长更新周期，两到三天更新一次，同时相对的进度也会加快</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/理解计算机/" class="post-category" target="_blank">
-                                    理解计算机
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
                                 </a>
                             
                             
@@ -563,33 +607,36 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/13/hello-world/">
+                <a href="/2019/08/14/python-xiao-ke-tang-09-ji-ben-shu-ju-lei-xing-xu-lie-zong-jie-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python小课堂09 - 基本数据类型序列总结篇">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python小课堂09 - 基本数据类型序列总结篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">python小课堂09 - 基本数据类型序列总结篇回顾基础数据类型在小课堂之前的章节中，介绍python的基础类型包含了int、float、bool、str、list、tuple。那么这些基础类型里有没有相似之处呢？必然是有的，今天就来做一</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Super Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PythonA基础篇/" class="post-category" target="_blank">
+                                    PythonA基础篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
